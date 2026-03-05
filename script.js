@@ -16,7 +16,7 @@ if ('scrollRestoration' in history) {
 // Typing Animation
 // ===============================
 
-const roles = [
+/*const roles = [
     "Salesforce Developer",
     "Apex Automation Engineer",
     "LWC Developer",
@@ -50,7 +50,7 @@ const roles = [
     }
     
     typeEffect();
-    
+    */
     
     // ===============================
     // Skill Popup
@@ -962,3 +962,11 @@ function toggleMenu(){
     menu.classList.toggle("active");
     
     }
+    function scrollToAbout(){
+
+        document.getElementById("about")
+        .scrollIntoView({
+        behavior:"smooth"
+        });
+        
+        }

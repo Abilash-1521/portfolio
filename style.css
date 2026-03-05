@@ -1,7 +1,9 @@
 /* =========================
 GLOBAL - FIXED FOR IMMEDIATE VISIBILITY
 ========================= */
-
+html{
+scroll-behavior:smooth;
+}
 body {
   background: linear-gradient(
     270deg,
@@ -195,7 +197,47 @@ HERO
   margin-top: 10px;
   color: #cbd5f5;
 }
+.hero-role{
+font-size:22px;
+color:#22c55e;
+margin-top:10px;
+font-weight:500;
+}
+.hero-meta{
+margin-top:12px;
+font-size:14px;
+color:#94a3b8;
+letter-spacing:.5px;
+}
+.hero p{
+max-width:650px;
+}
+.scroll-hint{
+margin-top:40px;
+font-size:14px;
+color:#94a3b8;
+animation:scrollBounce 2s infinite;
+}
 
+@keyframes scrollBounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(6px);
+}
+}
+.scroll-hint{
+margin-top:40px;
+font-size:14px;
+color:#94a3b8;
+animation:scrollBounce 2s infinite;
+cursor:pointer;
+}
+
+.scroll-hint:hover{
+color:#38bdf8;
+}
 /* hero stats */
 .hero-stats {
   display: flex;
