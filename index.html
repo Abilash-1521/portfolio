@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abilash | Salesforce Developer</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<canvas id="particles"></canvas>
+
+<nav>
+
+<h2>Abilash.dev</h2>
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+<ul>
+
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#playground">Playground</a></li>
+<li><a href="#timeline">Journey</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1 class="hero-name">Abilash S</h1>
+
+<p class="typing">
+<span id="typing-text"></span>
+</p>
+
+<p class="summary">
+Salesforce Developer focused on building scalable CRM automation using Apex, SOQL, Triggers and Lightning Web Components.
+
+Experienced in designing bulk-safe automation frameworks, asynchronous processing pipelines and enterprise system integrations.
+
+</p>
+
+<div class="hero-stats">
+
+<div class="stat">
+<h3>2.5+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>40%</h3>
+<p>Manual Effort Reduced</p>
+</div>
+
+<div class="stat">
+<h3>Enterprise</h3>
+<p>Salesforce Implementations</p>
+</div>
+
+</div>
+
+
+<div class="tech-stack">
+
+<span>Apex</span>
+<span>SOQL</span>
+<span>LWC</span>
+<span>Flows</span>
+<span>Batch Apex</span>
+<span>Queueable</span>
+<span>Git</span>
+<span>nCino</span>
+
+</div>
+
+
+<div class="hero-buttons">
+
+<a href="Abilash Resume.pdf" class="btn">
+Download Resume
+</a>
+
+<button class="recruiter-btn" onclick="openRecruiterMode()">
+View My Salesforce Thinking
+</button>
+
+</div>
+
+</section>
+<section id="about" class="reveal">
+
+<h2>About</h2>
+
+<div class="about-card">
+
+<p>
+Salesforce Developer with 2.5+ years of experience building scalable CRM automation systems across enterprise Salesforce implementations.
+
+Specialized in Apex backend architecture, bulk-safe trigger frameworks and asynchronous processing using Queueable and Batch Apex.
+
+Experienced in designing automation engines, system integrations and data processing pipelines that improve operational efficiency and reduce manual effort.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="skills" class="reveal">
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+<div class="card" onclick="openSkill('apex')">Apex</div>
+<div class="card" onclick="openSkill('lwc')">Lightning Web Components</div>
+<div class="card" onclick="openSkill('triggers')">Trigger Framework</div>
+<div class="card" onclick="openSkill('queueable')">Queueable Apex</div>
+<div class="card" onclick="openSkill('batch')">Batch Apex</div>
+<div class="card" onclick="openSkill('soql')">SOQL Optimization</div>
+<div class="card" onclick="openSkill('flow')">Flows</div>
+<div class="card" onclick="openSkill('rest')">REST Integrations</div>
+<div class="card" onclick="openSkill('security')">Security Model</div>
+<div class="card" onclick="openSkill('git')">Git & DevOps</div>
+
+</div>
+
+</section>
+
+<section id="experience" class="reveal">
+
+<h2>Experience</h2>
+
+<div class="project-grid">
+
+<div class="project-card" onclick="openExperience()">
+
+<h3>Deloitte Consulting USI</h3>
+
+<p class="duration">Associate Analyst | Aug 2022 – Jan 2025</p>
+
+<p>
+Worked on enterprise Salesforce implementations building automation
+using Apex triggers, flows and backend processing systems.
+
+Click to view details.
+</p>
+
+</div>
+
+
+<div class="project-card" onclick="openCareerBreak()">
+
+<h3>Career Break</h3>
+
+<p class="duration">Feb 2025 – Present</p>
+
+<p>
+Took a short break due to personal circumstances while upgrading
+Salesforce development skills.
+
+Click to view details.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="projects" class="reveal">
+
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card" onclick="openProject('checklist')">
+
+<h3>Dynamic Checklist & Task Automation Engine</h3>
+
+<p>
+Metadata-driven automation engine that dynamically generates operational tasks during Opportunity lifecycle stages.
+</p>
+
+</div>
+
+
+<div class="project-card" onclick="openProject('cascade')">
+
+<h3>Opportunity → Treasury Service Cascade</h3>
+
+<p>
+Backend automation that automatically provisions treasury product packages when opportunities progress.
+</p>
+
+</div>
+
+
+<div class="project-card" onclick="openProject('snapshot')">
+
+<h3>Snapshot Bulk Cleanup System</h3>
+
+<p>
+Automated deletion pipeline that cleans large snapshot datasets using Scheduled Batch Apex.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="architecture" class="reveal">
+
+<h2>Salesforce Automation Architecture</h2>
+
+<div class="architecture-flow">
+
+<div class="arch-node" id="nodeTrigger">Trigger</div>
+
+<div class="flow-line"></div>
+
+<div class="arch-node" id="nodeHandler">Handler</div>
+
+<div class="flow-line"></div>
+
+<div class="arch-node" id="nodeService">Service</div>
+
+<div class="flow-line"></div>
+
+<div class="arch-node" id="nodeDB">Database</div>
+
+</div>
+
+<button class="run-flow-btn" onclick="animateApexFlow()">
+Simulate Apex Flow
+</button>
+
+</section>
+<section id="playground" class="reveal">
+
+<h2>Salesforce System Design Playground</h2>
+
+<div class="flow-container">
+
+<div class="flow-node" id="node1">Trigger Fired</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node2">Handler Logic</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node3">Service Layer</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node4">Queueable Job</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node5">Database Update</div>
+
+</div>
+<button class="run-flow-btn" onclick="runSimulation()">
+Simulate System Flow
+</button>
+
+</section>
+
+<section id="simulator" class="reveal">
+
+<h2>Salesforce Transaction Simulator</h2>
+
+<p class="sim-desc">
+Simulates how a Salesforce transaction flows through backend architecture.
+</p>
+
+<div class="simulator-flow">
+
+<div class="sim-node" id="sim1">Opportunity Updated</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim2">Trigger Fired</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim3">Handler Logic</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim4">Queueable Job</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim5">External API Call</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim6">Database Commit</div>
+
+</div>
+
+<button class="run-flow-btn" onclick="runTransaction()">
+Run Transaction
+</button>
+
+</section>
+
+<section id="timeline" class="reveal">
+
+<h2>Developer Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+
+<h3>2022 — Starting My Salesforce Career</h3>
+
+<p>
+Joined Deloitte as a campus hire and underwent training in Salesforce and nCino. 
+Built a strong foundation in CRM concepts, platform configuration and enterprise banking workflows.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+
+<h3>Early Development Experience</h3>
+
+<p>
+Started with Salesforce configuration including objects, fields, flows and automation.
+Gradually transitioned into development where I began working with Apex triggers and backend logic.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+
+<h3>Enterprise Project Work</h3>
+
+<p>
+Worked on an internal enterprise implementation where I developed backend automation 
+using Apex triggers, flows and asynchronous processing. Built tools that automated 
+business workflows and improved operational efficiency.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+
+<h3>Expanding into Modern Salesforce Development</h3>
+
+<p>
+After a career break, focused on strengthening development skills by learning 
+Salesforce integrations and Lightning Web Components (LWC), expanding into 
+full-stack Salesforce development.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="contact" class="reveal">
+
+<h2>Contact</h2>
+
+<div class="contact-grid">
+
+<a href="mailto:abilash01.as@gmail.com?subject=Salesforce Opportunity&body=Hi Abilash, I came across your portfolio and wanted to connect."
+class="contact-card">
+<h3>Email</h3>
+<p id="emailText">abilash01.as@gmail.com</p>
+
+</a>
+
+
+<a href="tel:+917449214157" class="contact-card">
+
+<h3>Mobile</h3>
+<p>+91 7449214157</p>
+
+</a>
+
+
+<a class="contact-card"
+href="https://www.linkedin.com/in/abilash-s-a48725368"
+target="_blank"
+rel="noopener">
+
+<h3>LinkedIn</h3>
+<p>View Profile</p>
+
+</a>
+
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Abilash S</p>
+
+<p>Built with HTML, CSS, JavaScript</p>
+
+</footer>
+
+<div id="skillPopup" class="popup">
+
+<div class="popup-content">
+
+<span class="close-btn" onclick="closePopup()">✕</span>
+
+<h3 id="popupTitle"></h3>
+
+<p id="popupText"></p>
+
+<pre><code id="popupCode"></code></pre>
+
+</div>
+
+</div>
+
+
+<div id="detailPopup" class="popup">
+
+<div class="popup-content">
+
+<span class="close-btn" onclick="closeDetail()">✕</span>
+
+<h3 id="detailTitle"></h3>
+
+<div id="detailContent"></div>
+
+</div>
+
+</div>
+
+
+<div id="recruiterPopup" class="popup">
+
+<div class="popup-content">
+
+<span class="close-btn" onclick="closeRecruiter()">✕</span>
+
+<h3>Salesforce Architecture Thinking</h3>
+
+<ul>
+
+<li>Trigger → Handler → Service architecture</li>
+<li>Bulk-safe processing</li>
+<li>Async Queueable pipelines</li>
+<li>Secure CRUD/FLS logic</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
