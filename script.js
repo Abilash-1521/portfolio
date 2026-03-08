@@ -697,17 +697,35 @@ if ('scrollRestoration' in history) {
         "node5"
         ];
         
+        const lines=document.querySelectorAll(".flow-line");
+        
         let i=0;
         
         function highlight(){
+        
+        /* remove previous highlight */
         
         if(i>0){
         document.getElementById(nodes[i-1]).classList.remove("active");
         }
         
+        /* highlight current node */
+        
         if(i<nodes.length){
         
         document.getElementById(nodes[i]).classList.add("active");
+        
+        /* animate data flow */
+        
+        if(lines[i]){
+        const dot=document.createElement("div");
+        dot.classList.add("data-dot");
+        lines[i].appendChild(dot);
+        
+        setTimeout(()=>{
+        dot.remove();
+        },2000);
+        }
         
         i++;
         
@@ -720,6 +738,7 @@ if ('scrollRestoration' in history) {
         highlight();
         
         }
+
         // ===============================
 // Salesforce Transaction Simulator
 // ===============================
@@ -772,32 +791,7 @@ function runTransaction(){
         });
         
         });
-        function revealSections(){
-
-            const reveals=document.querySelectorAll("section");
-            
-            reveals.forEach(sec=>{
-            
-            const windowHeight=window.innerHeight;
-            
-            const revealTop=sec.getBoundingClientRect().top;
-            
-            if(revealTop < windowHeight - 80){
-            
-            sec.classList.add("active");
-            
-            }
-            
-            });
-            
-            }
-            
-            let scrollTimer;
-
-            window.addEventListener("scroll",()=>{
-            clearTimeout(scrollTimer);
-            scrollTimer=setTimeout(revealSections,50);
-            });            /* SCROLL REVEAL */
+        /* SCROLL REVEAL */
 
 function revealSections(){
 
@@ -962,11 +956,297 @@ function toggleMenu(){
     menu.classList.toggle("active");
     
     }
-    function scrollToAbout(){
+    function scrollToRecruiter(){
 
-        document.getElementById("about")
+        document.getElementById("recruiter")
         .scrollIntoView({
         behavior:"smooth"
         });
         
         }
+        function showLayer(layer){
+
+            let title="";
+            let content="";
+            
+            if(layer==="trigger"){
+            
+            title="Trigger Layer";
+            
+            content=`
+            <p>Triggers act as entry points for Salesforce transactions.</p>
+            
+            <ul>
+            <li>Listens to object events (insert, update, delete)</li>
+            <li>Keeps trigger lightweight</li>
+            <li>Delegates logic to handler classes</li>
+            <li>Supports bulk-safe processing</li>
+            </ul>
+            
+            <pre>
+            trigger OpportunityTrigger
+            on Opportunity (after update){
+            
+            OpportunityHandler.handleAfterUpdate(
+            Trigger.new
+            );
+            
+            }
+            </pre>
+            `;
+            
+            }
+            
+            else if(layer==="handler"){
+            
+            title="Handler Layer";
+            
+            content=`
+            <p>Handler classes organize trigger logic into maintainable modules.</p>
+            
+            <ul>
+            <li>Separates business logic from trigger</li>
+            <li>Improves readability</li>
+            <li>Supports testing and scalability</li>
+            </ul>
+            
+            <pre>
+            public class OpportunityHandler{
+            
+            public static void handleAfterUpdate(
+            List<Opportunity> opps){
+            
+            OpportunityService.process(opps);
+            
+            }
+            
+            }
+            </pre>
+            `;
+            
+            }
+            
+            else if(layer==="service"){
+            
+            title="Service Layer";
+            
+            content=`
+            <p>The service layer contains reusable business logic.</p>
+            
+            <ul>
+            <li>Reusable across triggers</li>
+            <li>Handles automation logic</li>
+            <li>Supports integrations</li>
+            </ul>
+            
+            <pre>
+            public class OpportunityService{
+            
+            public static void process(
+            List<Opportunity> opps){
+            
+            // business logic here
+            
+            }
+            
+            }
+            </pre>
+            `;
+            
+            }
+            
+            else if(layer==="database"){
+            
+            title="Database Layer";
+            
+            content=`
+            <p>This layer performs bulk-safe database operations.</p>
+            
+            <ul>
+            <li>Bulk-safe DML</li>
+            <li>SOQL optimization</li>
+            <li>Governor-limit safe</li>
+            </ul>
+            
+            <pre>
+            List<Task> tasks = new List<Task>();
+            
+            insert tasks;
+            </pre>
+            `;
+            
+            }
+            
+            document.getElementById("detailTitle").innerText=title;
+            
+            document.getElementById("detailContent").innerHTML=content;
+            
+            document.getElementById("detailPopup").style.display="flex";
+            
+            }
+            
+                /* =========================
+SCROLL REVEAL ANIMATION
+========================= */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
+}
+});
+},{threshold:0.2});
+
+reveals.forEach(section=>{
+observer.observe(section);
+});
+
+
+/* =========================
+SKILL BAR ANIMATION
+========================= */
+
+const skillBars = document.querySelectorAll(".skill-fill");
+
+const skillObserver = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+if(entry.target.classList.contains("apex"))
+entry.target.style.width="90%";
+
+if(entry.target.classList.contains("async"))
+entry.target.style.width="85%";
+
+if(entry.target.classList.contains("automation"))
+entry.target.style.width="88%";
+
+if(entry.target.classList.contains("integration"))
+entry.target.style.width="50%";
+
+if(entry.target.classList.contains("performance"))
+entry.target.style.width="82%";
+
+if(entry.target.classList.contains("devops"))
+entry.target.style.width="70%";
+
+}
+
+});
+
+},{threshold:0.5});
+
+skillBars.forEach(bar=>{
+skillObserver.observe(bar);
+});
+/* =========================
+ARCHITECTURE FLOW ANIMATION
+========================= */
+
+function showLayer(layer){
+
+    const nodes=document.querySelectorAll(".arch-layer");
+    
+    nodes.forEach(n=>n.classList.remove("active"));
+    
+    if(layer==="trigger")
+    nodes[0].classList.add("active");
+    
+    if(layer==="handler")
+    nodes[1].classList.add("active");
+    
+    if(layer==="service")
+    nodes[2].classList.add("active");
+    
+    if(layer==="database")
+    nodes[3].classList.add("active");
+    
+    }
+    /* =========================
+DATA FLOW VISUALIZATION
+========================= */
+
+function animateDataFlow(){
+
+    const lines=document.querySelectorAll(".flow-line");
+    
+    lines.forEach(line=>{
+    
+    const dot=document.createElement("div");
+    
+    dot.classList.add("data-dot");
+    
+    line.appendChild(dot);
+    
+    /* remove old dots after animation */
+    
+    setTimeout(()=>{
+    dot.remove();
+    },2000);
+    
+    });
+    
+    }
+    
+    /* =========================
+NAVBAR SCROLL SPY
+========================= */
+
+const pageSections = document.querySelectorAll("section");
+const navMenuLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+
+let currentSection = "";
+
+pageSections.forEach(section => {
+
+const sectionTop = section.offsetTop - 100;
+const sectionHeight = section.clientHeight;
+
+if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+currentSection = section.getAttribute("id");
+}
+
+});
+
+navMenuLinks.forEach(link => {
+
+link.classList.remove("active");
+
+if(link.getAttribute("href") === "#" + currentSection){
+link.classList.add("active");
+}
+
+});
+
+});
+function animateSkills(){
+
+    document.querySelector(".apex").style.width="90%";
+    document.querySelector(".async").style.width="85%";
+    document.querySelector(".automation").style.width="90%";
+    document.querySelector(".integration").style.width="75%";
+    document.querySelector(".performance").style.width="85%";
+    document.querySelector(".devops").style.width="70%";
+    
+    }
+    
+    setTimeout(animateSkills,800);
+    window.onclick = function(event){
+
+        const popups = document.querySelectorAll(".popup");
+        
+        popups.forEach(popup =>{
+        
+        if(event.target === popup){
+        popup.style.display="none";
+        document.body.style.overflow="auto";
+        }
+        
+        });
+        
+        };

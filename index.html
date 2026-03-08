@@ -10,6 +10,8 @@
 <meta name="description" content="Salesforce Developer portfolio of Abilash S showcasing Apex, LWC, integrations, automation architecture and enterprise Salesforce development experience.">
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <meta property="og:title" content="Abilash S | Salesforce Developer Portfolio">
 <meta property="og:description" content="Salesforce Developer portfolio showcasing automation architecture, Apex development and enterprise CRM solutions.">
@@ -50,7 +52,7 @@ Abilash — Salesforce Developer
 <h1 class="hero-name">Abilash S</h1>
 
 <p class="hero-role">
-Salesforce Developer
+Salesforce Developer • Apex • LWC • CRM Automation
 </p>
 
 <p class="summary">
@@ -107,11 +109,96 @@ View My Salesforce Thinking
 
 
 </div>
-<div class="scroll-hint" onclick="scrollToAbout()">
+<div class="scroll-hint" onclick="scrollToRecruiter()">
 Explore my work ↓
 </div>
 
 </section>
+<section id="recruiter" class="reveal">
+
+<h2>Engineering Capabilities</h2>
+
+<p class="dash-desc">
+Key Salesforce engineering strengths demonstrated through enterprise project work.
+</p>
+
+<div class="dash-grid">
+
+<div class="dash-card">
+<h3>Apex Development</h3>
+
+<div class="skill-bar">
+<div class="skill-fill apex"></div>
+</div>
+
+<p>Trigger frameworks, service architecture, bulk-safe processing.</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Async Processing</h3>
+
+<div class="skill-bar">
+<div class="skill-fill async"></div>
+</div>
+
+<p>Queueable Apex pipelines, Batch jobs and scheduled automation.</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Salesforce Automation</h3>
+
+<div class="skill-bar">
+<div class="skill-fill automation"></div>
+</div>
+
+<p>Opportunity lifecycle automation and checklist engines.</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Integration Design</h3>
+
+<div class="skill-bar">
+<div class="skill-fill integration"></div>
+</div>
+
+<p>REST APIs, secure callouts and external system integrations.</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>Performance Optimization</h3>
+
+<div class="skill-bar">
+<div class="skill-fill performance"></div>
+</div>
+
+<p>Governor limit safe design and batch cleanup systems.</p>
+
+</div>
+
+<div class="dash-card">
+
+<h3>DevOps & Git</h3>
+
+<div class="skill-bar">
+<div class="skill-fill devops"></div>
+</div>
+
+<p>Git workflows and collaborative development.</p>
+
+</div>
+
+</div>
+
+</section>
+
 <section id="about" class="reveal">
 
 <h2>About</h2>
@@ -255,34 +342,50 @@ Automated deletion pipeline that cleans large snapshot datasets using Scheduled 
 
 </section>
 
-
 <section id="architecture" class="reveal">
 
 <h2>Salesforce Automation Architecture</h2>
 
-<div class="architecture-flow">
+<p class="arch-desc">
+Click each layer to understand how I design scalable Salesforce automation systems.
+</p>
 
-<div class="arch-node" id="nodeTrigger">Trigger</div>
+<div class="architecture-diagram">
 
-<div class="flow-line"></div>
+<div class="arch-layer" onclick="showLayer('trigger')">
+<i class="fa-solid fa-bolt"></i>
+<h3>Trigger Layer</h3>
+<p>Entry point for data events</p>
+</div>
 
-<div class="arch-node" id="nodeHandler">Handler</div>
+<div class="arch-arrow">→</div>
 
-<div class="flow-line"></div>
+<div class="arch-layer" onclick="showLayer('handler')">
+<i class="fa-solid fa-code"></i>
+<h3>Handler Layer</h3>
+<p>Business logic separation</p>
+</div>
 
-<div class="arch-node" id="nodeService">Service</div>
+<div class="arch-arrow">→</div>
 
-<div class="flow-line"></div>
+<div class="arch-layer" onclick="showLayer('service')">
+<i class="fa-solid fa-gears"></i>
+<h3>Service Layer</h3>
+<p>Reusable business logic</p>
+</div>
 
-<div class="arch-node" id="nodeDB">Database</div>
+<div class="arch-arrow">→</div>
+
+<div class="arch-layer" onclick="showLayer('database')">
+<i class="fa-solid fa-database"></i>
+<h3>Database Layer</h3>
+<p>Bulk safe DML operations</p>
+</div>
 
 </div>
 
-<button class="run-flow-btn" onclick="animateApexFlow()">
-Simulate Apex Flow
-</button>
-
 </section>
+
 <section id="playground" class="reveal">
 
 <h2>Salesforce System Design Playground</h2>
@@ -422,15 +525,21 @@ full-stack Salesforce development.
 
 <div class="contact-grid">
 
-<a href="mailto:abilash01.as@gmail.com?subject=Salesforce Opportunity&body=Hi Abilash, I came across your portfolio and wanted to connect."
+<a href="mailto:abilash01.as@gmail.com"
 class="contact-card">
+
+<i class="fa-solid fa-envelope"></i>
+
 <h3>Email</h3>
-<p id="emailText">abilash01.as@gmail.com</p>
+<p>abilash01.as@gmail.com</p>
 
 </a>
 
 
-<a href="tel:+917449214157" class="contact-card">
+<a href="tel:+917449214157"
+class="contact-card">
+
+<i class="fa-solid fa-phone"></i>
 
 <h3>Mobile</h3>
 <p>+91 7449214157</p>
@@ -440,27 +549,30 @@ class="contact-card">
 
 <a class="contact-card"
 href="https://www.linkedin.com/in/abilash-s-a48725368"
-target="_blank"
-rel="noopener">
+target="_blank">
+
+<i class="fa-brands fa-linkedin"></i>
 
 <h3>LinkedIn</h3>
 <p>View Profile</p>
 
 </a>
+
+
 <a class="contact-card"
 href="https://github.com/abilash-1521"
 target="_blank">
 
+<i class="fa-brands fa-github"></i>
+
 <h3>GitHub</h3>
-<p>github.com/abilash-1521</p>
+<p>View Repositories</p>
 
 </a>
-
 
 </div>
 
 </section>
-
 <footer>
 
 <p>© 2026 Abilash S — Salesforce Developer </p>
