@@ -1109,10 +1109,20 @@ function toggleMenu(){
     }
     function scrollToRecruiter(){
 
-        document.getElementById("recruiter")
-        .scrollIntoView({
+        const section = document.getElementById("recruiter");
+        
+        section.scrollIntoView({
         behavior:"smooth"
         });
+        
+        setTimeout(()=>{
+        
+        if(!skillsAnimated){
+        animateSkills();
+        skillsAnimated = true;
+        }
+        
+        },500);
         
         }
         function showLayer(layer){
@@ -1261,28 +1271,16 @@ SKILL BAR ANIMATION
 
 const skillBars = document.querySelectorAll(".skill-fill");
 
+let skillsAnimated = false;
+
 const skillObserver = new IntersectionObserver((entries)=>{
+
 entries.forEach(entry=>{
 
-if(entry.isIntersecting){
+if(entry.isIntersecting && !skillsAnimated){
 
-if(entry.target.classList.contains("apex"))
-entry.target.style.width="90%";
-
-if(entry.target.classList.contains("async"))
-entry.target.style.width="85%";
-
-if(entry.target.classList.contains("automation"))
-entry.target.style.width="88%";
-
-if(entry.target.classList.contains("integration"))
-entry.target.style.width="50%";
-
-if(entry.target.classList.contains("performance"))
-entry.target.style.width="82%";
-
-if(entry.target.classList.contains("devops"))
-entry.target.style.width="70%";
+animateSkills();
+skillsAnimated = true;
 
 }
 
@@ -1377,16 +1375,43 @@ link.classList.add("active");
 });
 function animateSkills(){
 
-    document.querySelector(".apex").style.width="90%";
-    document.querySelector(".async").style.width="85%";
-    document.querySelector(".automation").style.width="90%";
-    document.querySelector(".integration").style.width="75%";
-    document.querySelector(".performance").style.width="85%";
-    document.querySelector(".devops").style.width="70%";
+    const skills = [
+    {cls:"apex",val:90},
+    {cls:"async",val:85},
+    {cls:"automation",val:88},
+    {cls:"integration",val:40},
+    {cls:"performance",val:82},
+    {cls:"devops",val:70}
+    ];
+    
+    skills.forEach(skill=>{
+    
+    const bar=document.querySelector("."+skill.cls);
+    const percent=bar.querySelector(".skill-percent");
+    
+    bar.style.width=skill.val+"%";
+    
+    let current=0;
+    
+    const counter=setInterval(()=>{
+    
+    if(current>=skill.val){
+    
+    clearInterval(counter);
+    
+    }else{
+    
+    current++;
+    percent.innerText=current+"%";
     
     }
     
-    setTimeout(animateSkills,800);
+    },20);
+    
+    });
+    
+    }
+  //  setTimeout(animateSkills,800);
     window.onclick = function(event){
 
         const popups = document.querySelectorAll(".popup");
@@ -1429,3 +1454,38 @@ hero.style.transform = `translateY(${scrollY * 0.2}px)`;
 }
 
 });
+function animateStats(){
+
+    const stats=document.querySelectorAll(".stat h3");
+    
+    stats.forEach(stat=>{
+    
+    const target=stat.innerText;
+    
+    if(target.includes("%")){
+    
+    let num=0;
+    const final=parseInt(target);
+    
+    const counter=setInterval(()=>{
+    
+    if(num>=final){
+    
+    clearInterval(counter);
+    
+    }else{
+    
+    num++;
+    stat.innerText=num+"%";
+    
+    }
+    
+    },25);
+    
+    }
+    
+    });
+    
+    }
+    
+    window.addEventListener("load",animateStats);

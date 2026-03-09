@@ -227,6 +227,8 @@ justify-content:center;
 align-items:center;
 text-align:center;
 transition:transform .4s ease;
+line-height:1.0;
+
 
 
 /* glass effect */
@@ -488,15 +490,18 @@ box-shadow:
 
 .skill-bar{
 
-background:#0f172a;
+background:#1e293b;
 
-height:10px;
+height:20px;
 
-border-radius:6px;
+border-radius:8px;
 
 margin:12px 0;
 
 overflow:hidden;
+
+
+
 
 }
 
@@ -508,11 +513,18 @@ background:linear-gradient(90deg,#38bdf8,#22c55e);
 
 width:0;
 
-transition:width 2s ease;
-
+transition:width 1.2s ease;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+padding-right:8px;
 }
 
 /* skill percentages */
+.skill-percent{
+font-size:12px;
+font-weight:600;
+color:#020617;
 
 .apex{ width:0 }
 .async{ width:0 }
@@ -520,6 +532,7 @@ transition:width 2s ease;
 .integration{ width:0 }
 .performance{ width:0 }
 .devops{ width:0 }
+}
 /* =========================
 BUTTONS
 ========================= */
@@ -1452,6 +1465,8 @@ opacity:1;
 display:inline-flex;
 align-items:center;
 gap:6px;
+background:#0f172a;
+border:1px solid #38bdf8;
 }
 
 .github-btn .arrow{
