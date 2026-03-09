@@ -503,42 +503,97 @@ if ('scrollRestoration' in history) {
         
         title="Dynamic Checklist & Task Automation Engine";
         
-        content=`
+        content = `
+
+        <p><b>Overview</b></p>
+        
+        <p>
+        A configurable automation engine that dynamically generates operational
+        checklists and tasks during the Opportunity lifecycle based on product
+        configurations and business templates.
+        </p>
+        
+        <p>
+        The system uses a template-driven architecture where checklist templates
+        and task templates define operational workflows. This allows administrators
+        to configure new processes without modifying Apex code.
+        </p>
+        
         
         <p><b>Architecture</b></p>
         
         <div class="architecture-board">
         
-        <div class="arch-box">Opportunity Trigger</div>
+        <div class="arch-box">Opportunity</div>
         <div class="arch-arrow"></div>
         
-        <div class="arch-box">Handler Layer</div>
+        <div class="arch-box">Product Selected</div>
+        <div class="arch-arrow"></div>
+        
+        <div class="arch-box">Opportunity Conversion</div>
         <div class="arch-arrow"></div>
         
         <div class="arch-box">Checklist Engine</div>
         <div class="arch-arrow"></div>
         
-        <div class="arch-box">Task Creation</div>
+        <div class="arch-box">Checklist Template</div>
+        <div class="arch-arrow"></div>
+        
+        <div class="arch-box">Tasks Generated</div>
         
         </div>
         
-        <p><b>Tools Used</b></p>
+        
+        <p><b>What the System Does</b></p>
+        
+        <ul>
+        
+        <li>Detects products selected on an Opportunity</li>
+        
+        <li>Creates Product Package and Treasury Service records</li>
+        
+        <li>Generates operational checklists from configurable templates</li>
+        
+        <li>Creates tasks automatically using task templates</li>
+        
+        <li>Synchronizes progress across Opportunity, Product Package and Treasury Service</li>
+        
+        <li>Updates stages automatically as tasks are completed</li>
+        
+        </ul>
+        
+        
+        <p><b>Technology Used</b></p>
         
         <ul>
         
         <li>Apex Trigger Framework</li>
-        <li>Handler Classes</li>
+        <li>Salesforce Flows</li>
+        <li>Lightning Web Components (LWC)</li>
         <li>SOQL Queries</li>
-        <li>Task Object Automation</li>
-        <li>Record Triggered Flows</li>
+        <li>Custom Objects</li>
         
         </ul>
         
-        <p><b>What It Does</b></p>
+        
+        <p><b>Engineering Outcome</b></p>
         
         <p>
-        Automatically generates checklist tasks whenever Opportunity stages change.
-        The engine dynamically builds tasks based on business pipeline configuration.
+        This engine standardizes operational workflows such as treasury onboarding
+        and product activation, eliminating manual checklist creation while ensuring
+        consistent process execution across teams.
+        </p>
+        
+        
+        <p style="margin-top:20px">
+        
+        <a href="https://github.com/Abilash-1521/salesforce-dynamic-checklist-engine"
+        target="_blank">
+        
+        View Code → GitHub Repository
+        
+        </a>
+        
         </p>
         
         `;
@@ -550,91 +605,174 @@ if ('scrollRestoration' in history) {
         
         title="Opportunity → Treasury Service Cascade Automation";
         
-        content=`
-        
-        <p><b>Architecture</b></p>
-        
-        <div class="architecture-board">
-        
-        <div class="arch-box">Opportunity Stage Update</div>
-        <div class="arch-arrow"></div>
-        
-        <div class="arch-box">Trigger Framework</div>
-        <div class="arch-arrow"></div>
-        
-        <div class="arch-box">Service Logic</div>
-        <div class="arch-arrow"></div>
-        
-        <div class="arch-box">Treasury Package Creation</div>
-        
-        </div>
-        
-        <p><b>Tools Used</b></p>
-        
-        <ul>
-        
-        <li>Apex Trigger Framework</li>
-        <li>Custom Objects</li>
-        <li>SOQL Relationship Queries</li>
-        <li>Bulk Processing Collections</li>
-        
-        </ul>
-        
-        <p><b>What It Does</b></p>
-        
-        <p>
-        When opportunities progress through stages, treasury services and product
-        packages are automatically created in backend systems.
-        This eliminates manual configuration work during deal processing.
-        </p>
-        
-        `;
+        content = `
+
+<p><b>Overview</b></p>
+
+<p>
+Automation system that provisions backend treasury operational records 
+based on Opportunity products when deals progress through the sales lifecycle.
+</p>
+
+<p>
+When an Opportunity reaches a key stage such as <b>Closed Won</b>, the system
+evaluates products associated with the Opportunity and automatically creates
+operational records required for treasury service provisioning.
+</p>
+
+
+<p><b>Architecture</b></p>
+
+<div class="architecture-board">
+
+<div class="arch-box">Opportunity Stage Update</div>
+<div class="arch-arrow"></div>
+
+<div class="arch-box">Trigger Framework</div>
+<div class="arch-arrow"></div>
+
+<div class="arch-box">Service Layer</div>
+<div class="arch-arrow"></div>
+
+<div class="arch-box">Opportunity Products</div>
+<div class="arch-arrow"></div>
+
+<div class="arch-box">Product Package</div>
+<div class="arch-arrow"></div>
+
+<div class="arch-box">Treasury Service</div>
+
+</div>
+
+
+<p><b>What the System Does</b></p>
+
+<ul>
+
+<li>Detects Opportunity stage updates</li>
+
+<li>Queries Opportunity Products (OpportunityLineItem)</li>
+
+<li>Creates Product Package records for each product</li>
+
+<li>Creates Treasury Service records linked to the Opportunity</li>
+
+<li>Automates backend operational provisioning</li>
+
+</ul>
+
+
+<p><b>Technology Used</b></p>
+
+<ul>
+
+<li>Apex Trigger Framework</li>
+<li>SOQL Relationship Queries</li>
+<li>Service Layer Architecture</li>
+<li>Bulk-safe Processing Collections</li>
+<li>Custom Objects</li>
+
+</ul>
+
+
+<p><b>Engineering Outcome</b></p>
+
+<p>
+This automation eliminates manual configuration of treasury services during
+deal processing and ensures operational readiness immediately after a deal
+is closed.
+</p>
+
+
+<p style="margin-top:20px">
+
+<a href="https://github.com/Abilash-1521/salesforce-opportunity-product-cascade-automation"
+target="_blank">
+
+View Code → GitHub Repository
+
+</a>
+
+</p>
+
+`;
         
         }
         
         
         else if(type==="snapshot"){
         
-        title="Snapshot Bulk Deletion using Scheduled Batch Apex";
-        
-        content=`
-        
-        <p><b>Architecture</b></p>
-        
-        <div class="architecture-board">
-        
-        <div class="arch-box">Scheduled Job</div>
-        <div class="arch-arrow"></div>
-        
-        <div class="arch-box">Batch Apex</div>
-        <div class="arch-arrow"></div>
-        
-        <div class="arch-box">Snapshot Query</div>
-        <div class="arch-arrow"></div>
-        
-        <div class="arch-box">Bulk Delete</div>
-        
-        </div>
-        
-        <p><b>Tools Used</b></p>
-        
-        <ul>
-        
-        <li>Scheduled Apex</li>
-        <li>Batch Apex</li>
-        <li>SOQL Batch Queries</li>
-        <li>Governor-Limit Safe Processing</li>
-        
-        </ul>
-        
-        <p><b>What It Does</b></p>
-        
-        <p>
-        Large volumes of snapshot records are automatically cleaned using a scheduled
-        Batch Apex job to maintain org performance and avoid data growth issues.
-        </p>
-        
-        `;
+            title="Snapshot Bulk Cleanup System";
+
+            content=`
+            
+            <p><b>Overview</b></p>
+            
+            <p>
+            Automated maintenance system that deletes historical Opportunity snapshot
+            records older than 30 days using Scheduled Apex and Batch Apex.
+            </p>
+            
+            <p>
+            The cleanup job runs every Friday evening and removes outdated snapshot
+            data to prevent unnecessary storage growth and maintain Salesforce
+            org performance.
+            </p>
+            
+            
+            <p><b>Architecture</b></p>
+            
+            <div class="architecture-board">
+            
+            <div class="arch-box">Scheduled Apex</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Batch Apex Job</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">SOQL Query</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Snapshot Records</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Bulk Delete</div>
+            
+            </div>
+            
+            
+            <p><b>Technology Used</b></p>
+            
+            <ul>
+            
+            <li>Batch Apex</li>
+            <li>Scheduled Apex</li>
+            <li>SOQL Queries</li>
+            <li>Bulk Processing Collections</li>
+            
+            </ul>
+            
+            
+            <p><b>Engineering Outcome</b></p>
+            
+            <p>
+            Automated snapshot cleanup reduced unnecessary data growth and ensured
+            consistent Salesforce org performance without manual maintenance.
+            </p>
+            
+            
+            <p style="margin-top:20px">
+            
+            <a href="https://github.com/Abilash-1521/salesforce-snapshot-cleanup-system"
+            target="_blank">
+            
+            View Code → GitHub Repository
+            
+            </a>
+            
+            </p>
+            
+            `;
         
         }
         
@@ -642,12 +780,14 @@ if ('scrollRestoration' in history) {
         document.getElementById("detailContent").innerHTML = content;
         
         document.getElementById("detailPopup").style.display="flex";
+        document.body.style.overflow="hidden";
         
         }
         function closeDetail(){
 
             document.getElementById("detailPopup").style.display="none";
             document.body.style.overflow = "auto";
+            
             
             }
     
@@ -793,27 +933,26 @@ function runTransaction(){
         });
         /* SCROLL REVEAL */
 
-function revealSections(){
+        function revealSections(){
 
-    const reveals=document.querySelectorAll(".reveal");
-    
-    reveals.forEach(section=>{
-    
-    const windowHeight=window.innerHeight;
-    
-    const revealTop=section.getBoundingClientRect().top;
-    
-    if(revealTop < windowHeight - 80){
-    
-    section.classList.add("active");
-    
-    }
-    
-    });
-    
-    }
-    
-    window.addEventListener("scroll",revealSections);
+            const sections=document.querySelectorAll(".reveal");
+            
+            sections.forEach(section=>{
+            
+            const windowHeight=window.innerHeight;
+            const revealTop=section.getBoundingClientRect().top;
+            
+            if(revealTop < windowHeight - 120){
+            
+            section.classList.add("active");
+            
+            }
+            
+            });
+            
+            }
+            
+            window.addEventListener("scroll",revealSections);
 
     /* PARTICLE BACKGROUND */
 
@@ -919,35 +1058,47 @@ function sendDataDot(line){
                     }
                     /* NAVBAR ACTIVE SECTION */
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
-
+                    const sections = document.querySelectorAll("section");
+                    const navLinks = document.querySelectorAll("nav a");
+                    
+                    window.addEventListener("scroll", () => {
+                    
+                    let current = "";
+                    
+                    sections.forEach(section => {
+                    
+                    const sectionTop = section.offsetTop - 120;
+                    
+                    if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                    }
+                    
+                    });
+                    
+                    navLinks.forEach(link => {
+                    
+                    link.classList.remove("active");
+                    
+                    if(link.getAttribute("href") === "#" + current){
+                    link.classList.add("active");
+                    }
+                    
+                    });
+                    
+                    });
 window.addEventListener("scroll", () => {
 
-let current = "";
-
-sections.forEach(section => {
-
-const sectionTop = section.offsetTop;
-const sectionHeight = section.clientHeight;
-
-if (pageYOffset >= sectionTop - 120) {
-current = section.getAttribute("id");
-}
-
-});
-
-navLinks.forEach(link => {
-
-link.classList.remove("active");
-
-if(link.getAttribute("href") === "#" + current){
-link.classList.add("active");
-}
-
-});
-
-});
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+    
+    document.querySelectorAll("nav a").forEach(link => {
+    link.classList.remove("active");
+    });
+    
+    document.querySelector('nav a[href="#contact"]').classList.add("active");
+    
+    }
+    
+    });
 function toggleMenu(){
 
     const menu =
@@ -1250,3 +1401,31 @@ function animateSkills(){
         });
         
         };
+        window.addEventListener("scroll",()=>{
+
+            const scrolled=window.scrollY;
+            
+            document.getElementById("particles").style.transform=
+            `translateY(${scrolled*0.15}px)`;
+            
+            });
+            const hero = document.querySelector(".hero");
+const heroName = document.querySelector(".hero-name");
+
+window.addEventListener("scroll", () => {
+
+const scrollY = window.scrollY;
+
+if(scrollY < 300){
+
+const scale = 1 - scrollY * 0.0007;
+const opacity = 1 - scrollY * 0.002;
+
+heroName.style.transform = `scale(${scale})`;
+heroName.style.opacity = opacity;
+
+hero.style.transform = `translateY(${scrollY * 0.2}px)`;
+
+}
+
+});
