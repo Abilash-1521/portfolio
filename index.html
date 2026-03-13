@@ -18,6 +18,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abilash-1521.github.io/portfolio/">
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2KCF9SFQ08"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2KCF9SFQ08');
+</script>
+
 </head>
 
 <body>
@@ -101,8 +110,12 @@ Apex, Lightning Web Components and Salesforce integrations.
 
 <div class="hero-buttons">
 
-<a href="Abilash Resume.pdf" class="btn">
+<a href="Abilash Resume.pdf"
+class="btn"
+onclick="trackResumeDownload()">
+
 Download Resume
+
 </a>
 
 <button class="recruiter-btn" onclick="openRecruiterMode()">
@@ -584,7 +597,7 @@ full-stack Salesforce development.
 
 <div class="contact-grid">
 
-<a href="mailto:abilash01.as@gmail.com?subject=Opportunity%20Discussion&body=Hello%20Abilash,%0A%0AI%20came%20across%20your%20portfolio..."
+<a href="mailto:abilash01.as@gmail.com"
 class="contact-card">
 
 <i class="fa-solid fa-envelope"></i>
@@ -696,6 +709,6 @@ target="_blank">
 
 <script src="script.js"></script>
 
-</body>
 
+</body>
 </html>

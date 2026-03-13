@@ -1489,3 +1489,13 @@ function animateStats(){
     }
     
     window.addEventListener("load",animateStats);
+    function trackResumeDownload(){
+
+        gtag('event','resume_download',{
+        event_category:'engagement',
+        event_label:'resume'
+        });
+        
+        incrementResumeCounter();
+        
+        }
