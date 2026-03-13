@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Abilash | Salesforce Developer</title>
-<meta name="description" content="Salesforce Developer portfolio of Abilash S showcasing Apex, LWC, integrations, automation architecture and enterprise Salesforce development experience.">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta name="description" content="Salesforce Developer portfolio of Abilash S showcasing Apex, LWC, integrations, automation architecture and enterprise Salesforce development experience.">
 
 <meta property="og:title" content="Abilash S | Salesforce Developer Portfolio">
 <meta property="og:description" content="Salesforce Developer portfolio showcasing automation architecture, Apex development and enterprise CRM solutions.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abilash-1521.github.io/portfolio/">
 
+<link rel="canonical" href="https://abilash-1521.github.io/portfolio/">
+
+<link rel="icon" href="favicon.ico">
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KCF9SFQ08"></script>
 
 <script>
+
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+
+function gtag(){
+dataLayer.push(arguments);
+}
+
 gtag('js', new Date());
-gtag('config', 'G-2KCF9SFQ08');
+
+gtag('config', 'G-2KCF9SFQ08', {
+anonymize_ip: true,
+page_title: document.title,
+page_location: window.location.href
+});
+
+/* Portfolio Analytics Events */
+
+function trackResumeDownload(){
+gtag('event','resume_download',{
+event_category:'engagement',
+event_label:'resume'
+});
+}
+
+function trackGithubClick(repo){
+gtag('event','github_click',{
+event_category:'engagement',
+event_label: repo
+});
+}
+
+function trackContactClick(type){
+gtag('event','contact_click',{
+event_category:'engagement',
+event_label: type
+});
+}
+
 </script>
 
+<!-- Microsoft Clarity (Session recording / heatmaps) -->
 <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "vv0n8znypn");
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);
+t.async=1;
+t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];
+y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "vv0n8znypn");
 </script>
+
 </head>
 
 <body>
@@ -119,8 +166,7 @@ Apex, Lightning Web Components and Salesforce integrations.
 
 <a href="Abilash Resume.pdf"
 class="btn"
-onclick="gtag('event','resume_download');">
-
+onclick="trackResumeDownload()">
 Download Resume
 </a>
 

@@ -454,14 +454,14 @@ if ('scrollRestoration' in history) {
             
             <p>Feb 2025 – Present</p>
             
-            <p><b>Reason</b></p>
-            
-            <p>
-            Took a short career break due to personal reasons.
-            During this time I focused on strengthening my Salesforce
-            development knowledge and upgrading my technical skills.
-            </p>
-            
+           <p><b>Focus During This Period</b></p>
+
+<p>
+Used this period to upgrade my Salesforce development capabilities 
+and expand into modern platform technologies including Lightning 
+Web Components and Salesforce integrations while building 
+independent automation projects.
+</p>
             <p><b>Skills Covered During This Period</b></p>
             
             <ul>
@@ -783,14 +783,8 @@ View Code → GitHub Repository
         document.body.style.overflow="hidden";
         
         }
-        function closeDetail(){
+ 
 
-            document.getElementById("detailPopup").style.display="none";
-            document.body.style.overflow = "auto";
-            
-            
-            }
-    
     
     
     // ===============================
@@ -1022,15 +1016,20 @@ function sendDataDot(line){
     setTimeout(()=>dot.remove(),2000);
     
     }
-    window.onclick = function(event) {
+    window.onclick = function(event){
 
-        const popup = document.getElementById("detailPopup");
+        const popups = document.querySelectorAll(".popup");
+        
+        popups.forEach(popup =>{
         
         if(event.target === popup){
-        popup.style.display = "none";
+        popup.style.display="none";
+        document.body.style.overflow="auto";
         }
         
-        }
+        });
+        
+        };
         document.addEventListener("keydown", function(e){
 
             if(e.key === "Escape"){
@@ -1488,14 +1487,19 @@ function animateStats(){
     
     }
     
-    window.addEventListener("load",animateStats);
-    function trackResumeDownload(){
+function trackResumeDownload(){
 
-        gtag('event','resume_download',{
-        event_category:'engagement',
-        event_label:'resume'
-        });
-        
-        incrementResumeCounter();
-        
-        }
+if(typeof gtag === "function"){
+
+gtag('event','resume_download',{
+event_category:'engagement',
+event_label:'resume'
+});
+
+}
+
+console.log("Resume downloaded");
+
+incrementResumeCounter();
+
+}
