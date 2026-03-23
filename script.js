@@ -542,6 +542,20 @@ independent automation projects.
         <div class="arch-box">Tasks Generated</div>
         
         </div>
+        <div class="project-flow">
+
+<div>Trigger</div>
+<span>→</span>
+<div>Handler</div>
+<span>→</span>
+<div>Service</div>
+<span>→</span>
+<div>Queueable</div>
+<span>→</span>
+<div>Database</div>
+
+</div>
+        
         
         
         <p><b>What the System Does</b></p>
@@ -643,6 +657,19 @@ operational records required for treasury service provisioning.
 <div class="arch-box">Treasury Service</div>
 
 </div>
+<div class="project-flow">
+
+<div>Trigger</div>
+<span>→</span>
+<div>Handler</div>
+<span>→</span>
+<div>Service</div>
+<span>→</span>
+<div>Queueable</div>
+<span>→</span>
+<div>Database</div>
+
+</div>
 
 
 <p><b>What the System Does</b></p>
@@ -739,6 +766,19 @@ View Code → GitHub Repository
             <div class="arch-box">Bulk Delete</div>
             
             </div>
+            <div class="project-flow">
+
+<div>Trigger</div>
+<span>→</span>
+<div>Handler</div>
+<span>→</span>
+<div>Service</div>
+<span>→</span>
+<div>Queueable</div>
+<span>→</span>
+<div>Database</div>
+
+</div>
             
             
             <p><b>Technology Used</b></p>
@@ -776,6 +816,7 @@ View Code → GitHub Repository
         
         }
         
+        
         document.getElementById("detailTitle").innerText = title;
         document.getElementById("detailContent").innerHTML = content;
         
@@ -791,7 +832,7 @@ View Code → GitHub Repository
     // Architecture Explanation
     // ===============================
     
-    function showArch(type){
+  /*  function showArch(type){
     
     let text="";
     
@@ -815,7 +856,7 @@ View Code → GitHub Repository
     
     }
     
-    
+    */
     
     // ===============================
     // Salesforce System Design Playground
@@ -1016,7 +1057,7 @@ function sendDataDot(line){
     setTimeout(()=>dot.remove(),2000);
     
     }
-    window.onclick = function(event){
+   /* window.onclick = function(event){
 
         const popups = document.querySelectorAll(".popup");
         
@@ -1029,7 +1070,7 @@ function sendDataDot(line){
         
         });
         
-        };
+        };*/
         document.addEventListener("keydown", function(e){
 
             if(e.key === "Escape"){
@@ -1503,3 +1544,37 @@ console.log("Resume downloaded");
 incrementResumeCounter();
 
 }
+
+let scroll50Tracked = false;
+let scroll80Tracked = false;
+
+window.addEventListener("scroll", () => {
+
+let scrollPercent =
+(window.scrollY + window.innerHeight) / document.body.scrollHeight;
+
+if(scrollPercent > 0.5 && !scroll50Tracked){
+scroll50Tracked = true;
+gtag('event','scroll_50',{event_category:'engagement'});
+}
+
+if(scrollPercent > 0.8 && !scroll80Tracked){
+scroll80Tracked = true;
+gtag('event','scroll_80',{event_category:'engagement'});
+}
+
+});
+// Highlight sticky CTA after 3 sec
+setTimeout(()=>{
+    const cta = document.querySelector(".sticky-cta");
+    if(cta){
+    cta.style.boxShadow = "0 0 20px rgba(56,189,248,0.6)";
+    }
+    },3000);
+    window.addEventListener("load", () => {
+        setTimeout(()=>{
+        document.querySelectorAll(".reveal").forEach(el=>{
+        el.classList.add("active");
+        });
+        },300);
+        });
