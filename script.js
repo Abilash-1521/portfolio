@@ -94,7 +94,23 @@ if ('scrollRestoration' in history) {
             }
         
         }`;
-        }
+        }else if(skill==="ncino"){
+
+            title="nCino Workflow Expertise";
+            
+            text="Experience working on enterprise banking workflows inspired by nCino modules such as Smart Checklist, Treasury Services and loan lifecycle processes.";
+            
+            code=`Modules Worked:
+            - Smart Checklist
+            - Treasury Services
+            - Loan Lifecycle Flows
+            
+            Focus Areas:
+            - Workflow automation
+            - Dynamic routing
+            - SLA tracking
+            - Metadata-driven design`;
+            }
         
         
         else if(skill==="lwc"){
@@ -284,16 +300,30 @@ if ('scrollRestoration' in history) {
         
         document.getElementById("popupCode").innerText = code;
         
-        document.getElementById("skillPopup").style.display="flex";
+        const skillPopup = document.getElementById("skillPopup");
+
+        if(skillPopup){
+          skillPopup.style.display = "flex";
+        
+          // RESET SCROLL
+          skillPopup.scrollTop = 0;
+        
+          const inner = skillPopup.querySelector(".popup-content");
+          if(inner){
+            inner.scrollTop = 0;
+          }
+        }
+        
         document.body.style.overflow = "hidden";
         
         }
     
         function closePopup(){
 
-            document.getElementById("skillPopup").style.display = "none";
-            document.body.style.overflow = "auto";
-            
+           // document.getElementById("skillPopup").style.display = "none";
+            //document.body.style.overflow = "auto";
+            closeAllPopups();
+
             }
     
     
@@ -303,15 +333,15 @@ if ('scrollRestoration' in history) {
     // ===============================
     
     function openRecruiterMode(){
-    document.getElementById("recruiterPopup").style.display = "flex";
+    document.getElementById("openEngineeringPopup").style.display = "flex";
     document.body.style.overflow = "hidden";
     }
     
     function closeRecruiter(){
 
-        document.getElementById("recruiterPopup").style.display = "none";
-        document.body.style.overflow = "auto";
-        
+        //document.getElementById("recruiterPopup").style.display = "none";
+        //document.body.style.overflow = "auto";
+        closeAllPopups();
         }
     
     
@@ -361,88 +391,86 @@ if ('scrollRestoration' in history) {
     function openExperience(){
 
         document.getElementById("detailTitle").innerText =
-        "Deloitte Consulting USI — Salesforce Developer Experience";
-        
+        "Deloitte Consulting USI — Salesforce Developer (nCino-focused)";
+      
         document.getElementById("detailContent").innerHTML = `
-        
+      
         <p><b>Environment</b></p>
-        
+      
         <ul>
-        
-        <li>Salesforce Sales Cloud</li>
-        <li>nCino Loan Lifecycle</li>
-        <li>Apex Development</li>
-        <li>Record Triggered Flows</li>
-        <li>Git Based Development</li>
-        
+          <li>Salesforce Sales Cloud</li>
+          <li>nCino Loan Lifecycle Workflows</li>
+          <li>Apex Backend Development</li>
+          <li>Record Triggered Flows</li>
+          <li>Git Based Development</li>
         </ul>
-        
-        
+      
+      
+        <p><b>Domain & System Context</b></p>
+      
+        <p class="case-sub">
+        Worked on enterprise banking workflows inspired by nCino modules such as 
+        Smart Checklist and Treasury Services, re-engineering similar systems 
+        using Salesforce-native architecture.
+        </p>
+      
+      
         <p><b>Key Engineering Problems Solved</b></p>
-        
+      
         <ul>
-        
-        <li>Manual checklist creation during deal lifecycle</li>
-        
-        <li>Manual backend configuration of treasury services</li>
-        
-        <li>Large snapshot datasets degrading org performance</li>
-        
+          <li>Manual checklist creation across opportunity lifecycle</li>
+          <li>Manual backend provisioning of treasury services</li>
+          <li>High-volume snapshot data degrading system performance</li>
         </ul>
-        
-        
+      
+      
         <p><b>Solutions Designed</b></p>
-        
+      
         <ul>
-        
-        <li>Dynamic checklist automation engine using Apex triggers</li>
-        
-        <li>Opportunity → Treasury cascade automation</li>
-        
-        <li>Scheduled batch cleanup framework for snapshot data</li>
-        
+          <li>Built a Smart Checklist-like automation engine using Apex trigger framework</li>
+          <li>Designed Opportunity → Service Cascade system for backend provisioning</li>
+          <li>Implemented Batch Apex cleanup framework for data maintenance</li>
         </ul>
-        
-        
+      
+      
         <p><b>Architecture Approach</b></p>
-        
+      
         <ul>
-        
-        <li>Trigger → Handler → Service layered architecture</li>
-        
-        <li>Bulk-safe collections for high-volume processing</li>
-        
-        <li>Queueable and Batch Apex for async operations</li>
-        
-        <li>SOQL optimization and governor-limit safe design</li>
-        
-        <li>Secure Apex enforcing CRUD & FLS</li>
-        
+          <li>Trigger → Handler → Service layered architecture</li>
+          <li>Bulk-safe collections for high-volume processing</li>
+          <li>Queueable & Batch Apex for async pipelines</li>
+          <li>SOQL optimization & governor-limit safe design</li>
+          <li>Secure Apex with CRUD & FLS enforcement</li>
         </ul>
-        
-        
+      
+      
         <p><b>Engineering Impact</b></p>
-        
+      
         <ul>
-        
-        <li>Reduced manual operational effort by ~40%</li>
-        
-        <li>Improved deal processing efficiency</li>
-        
-        <li>Automated backend system configuration</li>
-        
-        <li>Improved org performance through scheduled cleanup</li>
-        
+          <li>Reduced manual operational effort by ~40%</li>
+          <li>Improved deal onboarding and processing efficiency</li>
+          <li>Automated backend system configuration</li>
+          <li>Improved org performance through scheduled cleanup</li>
         </ul>
-        
+      
         `;
-        
-        document.getElementById("detailPopup").style.display="flex";
-                    document.body.style.overflow = "hidden";
-            
-            
-        
+      
+        const popup = document.getElementById("detailPopup");
+      
+        if(popup){
+          popup.style.display = "flex";
+      
+          // reset scroll
+          popup.scrollTop = 0;
+      
+          const inner = popup.querySelector(".popup-content");
+          if(inner){
+            inner.scrollTop = 0;
+          }
         }
+      
+        document.body.style.overflow = "hidden";
+      }
         function openCareerBreak(){
 
             document.getElementById("detailTitle").innerText =
@@ -494,7 +522,7 @@ independent automation projects.
     // Project Popups
     // ===============================
     
-    function openProject(type){
+   /* function openProject(type){
 
         let title="";
         let content="";
@@ -597,7 +625,15 @@ independent automation projects.
         and product activation, eliminating manual checklist creation while ensuring
         consistent process execution across teams.
         </p>
-        
+        <p><b>Why this design?</b></p>
+<ul>
+<li>Needed scalable reusable templates</li>
+<li>Avoid hardcoding workflows</li>
+<li>Support future extensibility</li>
+</ul>
+        <p>
+👉 Detailed breakdown available in <b>Case Study section</b>
+</p>
         
         <p style="margin-top:20px">
         
@@ -815,6 +851,103 @@ View Code → GitHub Repository
             `;
         
         }
+        else if(type==="account"){
+
+            title="Account Schematic Filtering Engine";
+            
+            content=`
+            
+            <p><b>Overview</b></p>
+            
+            <p>
+            Designed a dynamic multi-level filtering system to manage complex financial relationships 
+            across Accounts, Deposits, Treasury Services, and Products.
+            </p>
+            
+            <p><b>Architecture</b></p>
+            
+            <div class="architecture-board">
+            
+            <div class="arch-box">Account</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Deposit</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Deposit Status</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Treasury Service</div>
+            <div class="arch-arrow"></div>
+            
+            <div class="arch-box">Product</div>
+            
+            </div>
+            
+            <div class="project-flow">
+            
+            <div>Aura UI</div>
+            <span>→</span>
+            <div>Helper JS</div>
+            <span>→</span>
+            <div>Apex Controller</div>
+            <span>→</span>
+            <div>SOQL</div>
+            
+            </div>
+            
+            <p><b>What the System Does</b></p>
+            
+            <ul>
+            
+            <li>Loads Account → Deposit → Treasury hierarchy dynamically</li>
+            
+            <li>Applies multi-level filters across all related objects</li>
+            
+            <li>Maintains synchronized filtering across UI components</li>
+            
+            <li>Handles partial selections and "select all" scenarios</li>
+            
+            <li>Supports real-time data refresh using Apex calls</li>
+            
+            </ul>
+            
+            <p><b>Core Engineering Logic</b></p>
+            
+            <ul>
+            
+            <li>Custom selection engine using selected + duplicate + all IDs logic</li>
+            
+            <li>Dynamic SOQL queries based on filters</li>
+            
+            <li>Reusable filtering methods across layers</li>
+            
+            <li>Bulk-safe processing of records</li>
+            
+            </ul>
+            
+            <p><b>Key Engineering Decisions</b></p>
+            
+            <ul>
+            
+            <li>Avoided static filtering → built dynamic filter engine</li>
+            
+            <li>Used duplicate tracking to handle UI state consistency</li>
+            
+            <li>Separated UI, logic, and data layers</li>
+            
+            </ul>
+            
+            <p><b>Engineering Outcome</b></p>
+            
+            <p>
+            Enabled scalable and efficient filtering across complex financial datasets, 
+            improving usability and reducing manual data navigation.
+            </p>
+            <p><b>Special Highlight:</b> Implemented full reset mechanism to clear all filters and reload system state.</p>
+            
+            `;
+            }
         
         
         document.getElementById("detailTitle").innerText = title;
@@ -824,7 +957,581 @@ View Code → GitHub Repository
         document.body.style.overflow="hidden";
         
         }
- 
+ */
+// ===============================
+// OPEN PROJECT
+// ===============================
+
+function openProject(type){
+
+      // reset tabs
+    switchTab('overview');
+    
+    // CHECKLIST
+    if(type==="checklist"){
+    
+    document.getElementById("popup-title").innerText =
+    "Checklist Automation Engine";
+    
+    document.getElementById("tab-overview").innerHTML = `
+<p class="case-sub">
+Inspired by nCino Smart Checklist concept, this system automates checklist generation based on lifecycle stages and business conditions.
+</p>
+<div class="case-block">
+
+<p class="case-title">Problem</p>
+<p>
+During the opportunity lifecycle, checklist creation was handled manually, 
+which led to delays, inconsistent execution, and lack of visibility across teams.
+</p>
+
+<p class="case-sub">
+This created heavy dependency on manual tracking and increased the risk of missing critical onboarding steps.
+</p>
+
+
+</div>
+
+
+<div class="case-block">
+
+<p class="case-title">Solution</p>
+<p>
+Designed and implemented a <b style="color:#38bdf8;">scalable checklist automation engine</b> 
+using Apex trigger framework and template-driven architecture.
+</p>
+
+<ul class="bullet-list">
+<li>Automatically generates checklists based on selected products</li>
+<li>Creates dependent tasks using configurable templates</li>
+<li>Tracks execution across lifecycle stages</li>
+</ul>
+
+<ul class="arrow-list">
+<li>Eliminates manual checklist dependency</li>
+<li>Ensures standardized execution across teams</li>
+<li>Improves operational visibility and control</li>
+</ul>
+
+</div>
+
+
+<div class="case-block">
+
+<p class="case-title">How it Works</p>
+
+<div class="case-flow">
+<span>Opportunity Update</span>
+<span>→</span>
+<span>Trigger</span>
+<span>→</span>
+<span>Handler</span>
+<span>→</span>
+<span>Service</span>
+<span>→</span>
+<span>Checklist Engine</span>
+</div>
+
+<p class="case-sub">
+Each stage transition triggers backend logic that dynamically provisions checklist 
+and task structures without manual intervention.
+</p>
+
+</div>
+
+
+<div class="case-block">
+
+<p class="case-title">Tech Used</p>
+
+<div class="tech-tags">
+<span>Apex</span>
+<span>Trigger Framework</span>
+<span>SOQL</span>
+<span>nCino</span>
+</div>
+
+</div>
+
+
+<div class="case-block">
+
+<p class="case-title">Impact</p>
+
+<ul class="arrow-list">
+<li>Reduced manual effort by ~40%</li>
+<li>Standardized workflow execution across lifecycle</li>
+<li>Improved onboarding efficiency and tracking</li>
+</ul>
+
+<p class="case-highlight">
+→ Built using real project experience in Salesforce + nCino ecosystem
+</p>
+
+</div>
+
+<br>
+
+<a href="https://github.com/abilash-1521/salesforce-dynamic-checklist-engine"
+target="_blank"
+class="github-popup-link">
+View Full Code on GitHub →
+</a>
+
+`;
+    }
+    
+    // CASCADE
+    else if(type==="cascade"){
+    
+    document.getElementById("popup-title").innerText =
+    "Treasury Cascade Automation";
+    
+    document.getElementById("tab-overview").innerHTML = `
+    <p class="case-sub">
+This design mirrors nCino-style service provisioning, where backend systems are dynamically created during deal lifecycle transitions.
+</p>
+
+    <div class="case-block">
+    
+    <p class="case-title">Problem</p>
+    <p>
+    After deal closure, treasury service setup was handled manually which caused delays 
+    in backend provisioning and dependency on operations teams.
+    </p>
+    
+    <p class="case-sub">
+    This slowed down deal onboarding and created inconsistency in system readiness.
+    </p>
+    
+    </div>
+    
+    <div class="case-block">
+    
+    <p class="case-title">Solution</p>
+    <p>
+    Designed an <b style="color:#38bdf8;">automated cascade system</b> using Apex trigger 
+    and Queueable processing to provision backend records dynamically.
+    </p>
+    
+    <ul class="bullet-list">
+    <li>Detects opportunity stage changes (Closed Won)</li>
+    <li>Fetches related Opportunity Products</li>
+    <li>Creates Product Package & Treasury Service records</li>
+    </ul>
+    
+    <ul class="arrow-list">
+    <li>Eliminates manual backend configuration</li>
+    <li>Ensures immediate system readiness</li>
+    <li>Improves deal processing speed</li>
+    </ul>
+    
+    </div>
+    
+    <div class="case-block">
+    
+    <p class="case-title">How it Works</p>
+    
+    <div class="case-flow">
+    <span>Opportunity Update</span>
+    <span>→</span>
+    <span>Trigger</span>
+    <span>→</span>
+    <span>Service Layer</span>
+    <span>→</span>
+    <span>Queueable</span>
+    <span>→</span>
+    <span>Record Creation</span>
+    </div>
+    
+    <p class="case-sub">
+    Async processing ensures scalability and prevents governor limit issues.
+    </p>
+    
+    </div>
+    
+    <div class="case-block">
+    
+    <p class="case-title">Tech Used</p>
+    
+    <div class="tech-tags">
+    <span>Apex</span>
+    <span>Queueable</span>
+    <span>SOQL</span>
+    <span>nCino</span>
+    </div>
+    
+    </div>
+    
+    <div class="case-block">
+    
+    <p class="case-title">Impact</p>
+    
+    <ul class="arrow-list">
+    <li>Removed manual provisioning effort</li>
+    <li>Improved onboarding speed</li>
+    <li>Ensured consistent backend setup</li>
+    </ul>
+    
+    <p class="case-highlight">
+    → Built using real-time enterprise automation requirements
+    </p>
+    
+    </div>
+    
+    <br>
+    
+    <a href="https://github.com/abilash-1521/salesforce-opportunity-product-cascade-automation"
+    target="_blank"
+    class="github-popup-link">
+    View Full Code on GitHub →
+    </a>
+    
+    `;
+    
+    document.getElementById("tab-architecture").innerHTML = `
+    <div class="project-flow">
+    <div>Opportunity</div><span>→</span>
+    <div>Trigger</div><span>→</span>
+    <div>Service</div><span>→</span>
+    <div>Queueable</div>
+    </div>
+    `;
+    
+    document.getElementById("tab-decisions").innerHTML = `
+    <ul>
+    <li>Used async to avoid limits</li>
+    <li>Ensured scalable processing</li>
+    </ul>
+    `;
+    
+    }
+    
+    // SNAPSHOT
+    else if(type==="snapshot"){
+    
+    document.getElementById("popup-title").innerText =
+    "Snapshot Cleanup Engine";
+    
+    document.getElementById("tab-overview").innerHTML = `
+    <p class="case-sub">
+Designed for enterprise-scale Salesforce environments handling high data volumes.
+</p>
+
+<div class="case-block">
+
+<p class="case-title">Problem</p>
+<p>
+Snapshot data accumulated rapidly over time, impacting Salesforce storage 
+and degrading system performance.
+</p>
+
+<p class="case-sub">
+Manual cleanup was not feasible due to large data volumes.
+</p>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">Solution</p>
+<p>
+Built a <b style="color:#38bdf8;">scheduled cleanup framework</b> using Batch Apex 
+and Scheduler to automate deletion of old snapshot records.
+</p>
+
+<ul class="bullet-list">
+<li>Identifies records older than defined threshold</li>
+<li>Processes large datasets using Batch Apex</li>
+<li>Schedules periodic cleanup automatically</li>
+</ul>
+
+<ul class="arrow-list">
+<li>Prevents unnecessary data growth</li>
+<li>Maintains system performance</li>
+<li>Eliminates manual maintenance</li>
+</ul>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">How it Works</p>
+
+<div class="case-flow">
+<span>Scheduler</span>
+<span>→</span>
+<span>Batch Apex</span>
+<span>→</span>
+<span>SOQL Query</span>
+<span>→</span>
+<span>Bulk Delete</span>
+</div>
+
+<p class="case-sub">
+Batch processing ensures safe execution without hitting governor limits.
+</p>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">Tech Used</p>
+
+<div class="tech-tags">
+<span>Batch Apex</span>
+<span>Scheduler</span>
+<span>SOQL</span>
+</div>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">Impact</p>
+
+<ul class="arrow-list">
+<li>Improved org performance</li>
+<li>Reduced storage consumption</li>
+<li>Ensured automated maintenance</li>
+</ul>
+
+<p class="case-highlight">
+→ Designed for high-volume data handling scenarios
+</p>
+
+</div>
+
+<br>
+
+<a href="https://github.com/abilash-1521/salesforce-snapshot-cleanup-system"
+target="_blank"
+class="github-popup-link">
+View Full Code on GitHub →
+</a>
+
+`;
+    
+    document.getElementById("tab-architecture").innerHTML = `
+    <div class="project-flow">
+    <div>Scheduler</div><span>→</span>
+    <div>Batch Apex</div><span>→</span>
+    <div>Database</div>
+    </div>
+    `;
+    
+    document.getElementById("tab-decisions").innerHTML = `
+    <ul>
+    <li>Used batch for large data</li>
+    <li>Improved system performance</li>
+    </ul>
+    `;
+    
+    }
+    
+    // ACCOUNT SCHEMATIC
+    else if(type==="account"){
+    
+    document.getElementById("popup-title").innerText =
+    "Account Schematic Engine";
+    
+    document.getElementById("tab-overview").innerHTML = `
+    <p class="case-sub">
+Inspired by complex banking relationship structures similar to nCino account-product mappings.
+</p>
+
+<div class="case-block">
+
+<p class="case-title">Problem</p>
+<p>
+Managing complex relationships between accounts, deposits, and treasury services 
+was difficult due to lack of dynamic filtering.
+</p>
+
+<p class="case-sub">
+Users struggled with navigating large datasets and applying consistent filters.
+</p>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">Solution</p>
+<p>
+Built a <b style="color:#38bdf8;">dynamic filtering engine</b> using Aura UI 
+and Apex controllers to handle multi-level relationships.
+</p>
+
+<ul class="bullet-list">
+<li>Loads hierarchical account → deposit → treasury data</li>
+<li>Applies filters dynamically across related objects</li>
+<li>Maintains UI state consistency</li>
+</ul>
+
+<ul class="arrow-list">
+<li>Improves usability across complex datasets</li>
+<li>Reduces manual data navigation</li>
+<li>Ensures real-time synchronization</li>
+</ul>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">How it Works</p>
+
+<div class="case-flow">
+<span>Aura UI</span>
+<span>→</span>
+<span>Helper JS</span>
+<span>→</span>
+<span>Apex Controller</span>
+<span>→</span>
+<span>SOQL</span>
+</div>
+
+<p class="case-sub">
+Dynamic queries ensure efficient data retrieval based on user selections.
+</p>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">Tech Used</p>
+
+<div class="tech-tags">
+<span>Aura</span>
+<span>Apex</span>
+<span>SOQL</span>
+</div>
+
+</div>
+
+<div class="case-block">
+
+<p class="case-title">Impact</p>
+
+<ul class="arrow-list">
+<li>Improved data visibility</li>
+<li>Reduced user effort in filtering</li>
+<li>Enhanced UI responsiveness</li>
+</ul>
+
+<p class="case-highlight">
+→ Built for complex enterprise data navigation use cases
+</p>
+
+</div>
+
+<br>
+
+<a href="https://github.com/Abilash-1521/salesforce-account-schematic-engine"
+target="_blank"
+class="github-popup-link">
+View Full Code on GitHub →
+</a>
+
+`;
+    
+    document.getElementById("tab-architecture").innerHTML = `
+    <div class="project-flow">
+    <div>Account</div><span>→</span>
+    <div>Deposit</div><span>→</span>
+    <div>Treasury</div><span>→</span>
+    <div>Product</div>
+    </div>
+    `;
+    
+    document.getElementById("tab-decisions").innerHTML = `
+    <ul>
+    <li>Custom selection logic (selected + duplicate)</li>
+    <li>Dynamic SOQL queries</li>
+    <li>State consistency handling</li>
+    </ul>
+    `;
+    
+    }
+    
+    // SHOW POPUP
+  //  document.getElementById("popup").style.display = "flex";
+    
+    
+// ===============================
+// SHOW POPUP (CLEAN FIX)
+// ===============================
+
+// LOCK SCROLL
+document.body.style.overflow = "hidden";
+
+// USE ONLY ONE POPUP (detailPopup)
+const projectPopup = document.getElementById("popup");
+
+if(projectPopup){
+
+  projectPopup.style.display = "flex";
+
+  // RESET SCROLL TO TOP
+  projectPopup.scrollTop = 0;
+
+  const inner = projectPopup.querySelector(".popup-content");
+  if(inner){
+    inner.scrollTop = 0;
+  }
+
+  // animation trigger
+  setTimeout(()=>{
+    projectPopup.classList.add("show");
+  },10);
+}}
+    
+    // ===============================
+    // CLOSE POPUP
+    // ===============================
+    
+  /*  function closePopup(){
+        const popup = document.getElementById("popup");
+
+        popup.classList.remove("show");
+        
+        setTimeout(()=>{
+        popup.style.display = "none";
+        },200);
+        }
+    */
+    
+    // ===============================
+    // TAB SWITCH
+    // ===============================
+    
+    function switchTab(tab){
+    
+    document.querySelectorAll('.tab').forEach(btn=>{
+    btn.classList.remove('active');
+    });
+    
+    document.querySelectorAll('.tab-content').forEach(content=>{
+    content.classList.remove('active');
+    });
+    
+    document.querySelector(`[onclick="switchTab('${tab}')"]`)
+    .classList.add('active');
+    
+    document.getElementById(`tab-${tab}`)
+    .classList.add('active');
+    }
+    
+    
+    // ===============================
+    // CLOSE ON OUTSIDE CLICK
+    // ===============================
+    
+    window.onclick = function(e){
+    let popup = document.getElementById("popup");
+    if(e.target === popup){
+    popup.style.display = "none";
+    }
+    };
 
     
     
@@ -1074,18 +1781,28 @@ function sendDataDot(line){
         document.addEventListener("keydown", function(e){
 
             if(e.key === "Escape"){
-            document.getElementById("detailPopup").style.display = "none";
+           /* document.getElementById("detailPopup").style.display = "none";
             document.getElementById("skillPopup").style.display = "none";
-            document.getElementById("recruiterPopup").style.display = "none";
+            document.getElementById("recruiterPopup").style.display = "none";*/
+            closeAllPopups();
             }
             
             });
-           
+            function closeAllPopups(){
+
+                document.querySelectorAll(".popup").forEach(p => {
+                    p.style.display = "none";
+                });
+            
+                // 🔥 THIS WAS MISSING
+                document.body.style.overflow = "auto";
+            }
 
             function closeDetail(){
-                document.getElementById("detailPopup").style.display="none";
-                document.body.style.overflow="auto";
-                }
+               // document.getElementById("detailPopup").style.display="none";
+                //document.body.style.overflow="auto";
+                closeAllPopups();
+            }
                 function copyEmail(){
 
                     const email =
@@ -1099,33 +1816,37 @@ function sendDataDot(line){
                     /* NAVBAR ACTIVE SECTION */
 
                     const sections = document.querySelectorAll("section");
-                    const navLinks = document.querySelectorAll("nav a");
-                    
-                    window.addEventListener("scroll", () => {
-                    
-                    let current = "";
-                    
-                    sections.forEach(section => {
-                    
-                    const sectionTop = section.offsetTop - 120;
-                    
-                    if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute("id");
-                    }
-                    
-                    });
-                    
-                    navLinks.forEach(link => {
-                    
-                    link.classList.remove("active");
-                    
-                    if(link.getAttribute("href") === "#" + current){
-                    link.classList.add("active");
-                    }
-                    
-                    });
-                    
-                    });
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.offsetTop - 120;
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionBottom
+    ) {
+      current = section.getAttribute("id");
+    }
+
+  });
+
+  navLinks.forEach(link => {
+
+    link.classList.remove("active");
+
+    if(link.getAttribute("href") === "#" + current){
+      link.classList.add("active");
+    }
+
+  });
+
+});
 window.addEventListener("scroll", () => {
 
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
@@ -1384,7 +2105,7 @@ function animateDataFlow(){
 NAVBAR SCROLL SPY
 ========================= */
 
-const pageSections = document.querySelectorAll("section");
+/*const pageSections = document.querySelectorAll("section");
 const navMenuLinks = document.querySelectorAll("nav ul li a");
 
 window.addEventListener("scroll", () => {
@@ -1412,7 +2133,7 @@ link.classList.add("active");
 
 });
 
-});
+});*/
 function animateSkills(){
 
     const skills = [
@@ -1578,3 +2299,62 @@ setTimeout(()=>{
         });
         },300);
         });
+        // ===============================
+// SCROLL DEPTH TRACKING (ANALYTICS BOOST)
+// ===============================
+
+let scroll50 = false;
+let scroll80 = false;
+
+window.addEventListener("scroll", () => {
+
+let scrollPercent =
+(window.scrollY + window.innerHeight) / document.body.scrollHeight;
+
+if(scrollPercent > 0.5 && !scroll50){
+scroll50 = true;
+gtag('event','scroll_50',{event_category:'engagement'});
+}
+
+if(scrollPercent > 0.8 && !scroll80){
+scroll80 = true;
+gtag('event','scroll_80',{event_category:'engagement'});
+}
+
+});
+event.stopPropagation()
+
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if(target){
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+  function scrollToSection(id){
+    const el = document.getElementById(id);
+    if(el){
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+  function openEngineeringPopup(){
+
+    const popup = document.getElementById("engineeringPopup");
+  
+    if(popup){
+      popup.style.display = "flex";
+  
+      popup.scrollTop = 0;
+  
+      const inner = popup.querySelector(".popup-content");
+      if(inner){
+        inner.scrollTop = 0;
+      }
+    }
+  
+    document.body.style.overflow = "hidden";
+  }
+ 

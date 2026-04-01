@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -98,12 +98,13 @@ Abilash — Salesforce Developer
 <ul>
 
 <li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
+<!--<li><a href="#skills">Skills</a></li>-->
 <li><a href="#experience">Experience</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#architecture">Architecture</a></li>
-<li><a href="#playground">Playground</a></li>
-<li><a href="#timeline">Journey</a></li>
+<!--<li><a href="#case-study">Case Study</a></li>-->
+<!--<li><a href="#architecture">Architecture</a></li>-->
+<!--<li><a href="#playground">Playground</a></li>-->
+<!--<li><a href="#timeline">Journey</a></li>-->
 <li><a href="#contact">Contact</a></li>
 
 </ul>
@@ -114,16 +115,20 @@ Abilash — Salesforce Developer
 
 
 <h1 class="hero-name">Abilash S</h1>
-
 <p class="hero-role">
-I design scalable Salesforce automation systems that eliminate manual operations
+Salesforce Backend Developer (nCino-focused) building scalable automation systems
 </p>
 
 <p class="hero-impact">
-→ Reduced manual effort by 40%  
-→ Built async processing pipelines (Queueable + Batch Apex)  
-→ Designed enterprise workflow automation systems  
+→ Built Smart Checklist & workflow automation systems  
+→ Designed routing, cascade & SLA tracking engines  
+→ Reduced manual effort by 40% through backend automation  
 </p>
+
+<p class="hero-meta">
+Apex • Async Processing • Enterprise Banking Workflows • nCino-inspired Systems
+</p>
+
 <div class="hero-stats">
 
 <div class="stat">
@@ -166,8 +171,8 @@ onclick="trackResumeDownload()">
 Download Resume
 </a>
 
-<button class="recruiter-btn" onclick="openRecruiterMode()">
-View My Salesforce Thinking
+<button class="recruiter-btn" onclick="openEngineeringPopup()">
+Explore System Design →
 </button>
 
 <a href="https://github.com/Abilash-1521"
@@ -177,15 +182,15 @@ View Salesforce Projects on GitHub
 </a>
 
 </div>
-<div class="scroll-hint" onclick="scrollToRecruiter()">
-Explore my work ↓
+<div class="scroll-hint" onclick="scrollToSection('experience')">
+View My Work ↓
 </div>
 
 </section>
 <!-- ===============================
 QUICK SNAPSHOT (NEW)
 =============================== -->
-
+<!--
 <section id="quick" class="reveal">
 
 <h2>Quick Snapshot</h2>
@@ -202,11 +207,40 @@ QUICK SNAPSHOT (NEW)
 </div>
 
 </section>
+-->
+<section id="quick" class="reveal">
 
+<h2>Why Me</h2>
+
+<p class="section-sub">
+Backend-focused Salesforce developer with strong system design thinking and automation expertise
+</p>
+
+<div class="about-card">
+
+<ul>
+
+<li>2.5+ years Salesforce backend development experience</li>
+
+<li>Designs <b>automation systems</b>, not just features</li>
+
+<li>Strong in <b>Apex architecture & async processing</b></li>
+
+<li>Built <b>enterprise workflow automation</b> reducing manual effort</li>
+
+<li>Experienced in <b>scalable CRM design & data processing</b></li>
+
+<li>Production-focused mindset with real project experience</li>
+
+</ul>
+
+</div>
+
+</section>
 
 <!-- ===============================
 WHY ME (NEW)
-=============================== -->
+=============================== 
 
 <section id="why" class="reveal">
 
@@ -228,104 +262,11 @@ WHY ME (NEW)
 
 </div>
 
-</section>
-
+</section>-->
 
 <!-- ===============================
-STICKY CTA (NEW)
+About
 =============================== -->
-
-<div class="sticky-cta">
-<a href="#projects">Projects</a>
-<a href="#architecture">Architecture</a>
-<a href="Abilash Resume.pdf">Resume</a>
-</div>
-<section id="recruiter" class="reveal">
-
-<h2>Engineering Capabilities</h2>
-
-<p class="dash-desc">
-Key Salesforce engineering strengths demonstrated through enterprise project work.
-</p>
-
-<div class="dash-grid">
-
-<div class="dash-card">
-<h3>Apex Development</h3>
-
-<div class="skill-bar">
-<div class="skill-fill apex"><span class="skill-percent">90%</span>
-</div>
-</div>
-
-<p>Trigger frameworks, service architecture, bulk-safe processing.</p>
-
-</div>
-
-<div class="dash-card">
-
-<h3>Async Processing</h3>
-
-<div class="skill-bar">
-<div class="skill-fill async"><span class="skill-percent">85%</span></div>
-</div>
-
-<p>Queueable Apex pipelines, Batch jobs and scheduled automation.</p>
-
-</div>
-
-<div class="dash-card">
-
-<h3>Salesforce Automation</h3>
-
-<div class="skill-bar">
-<div class="skill-fill automation"><span class="skill-percent">88%</span></div>
-</div>
-
-<p>Opportunity lifecycle automation and checklist engines.</p>
-
-</div>
-
-<div class="dash-card">
-
-<h3>Integration Design</h3>
-
-<div class="skill-bar">
-<div class="skill-fill integration"><span class="skill-percent">40%</span></div>
-</div>
-
-<p>REST APIs, secure callouts and external system integrations.</p>
-
-</div>
-
-<div class="dash-card">
-
-<h3>Performance Optimization</h3>
-
-<div class="skill-bar">
-<div class="skill-fill performance"><span class="skill-percent">82%</span></div>
-</div>
-
-<p>Governor limit safe design and batch cleanup systems.</p>
-
-</div>
-
-<div class="dash-card">
-
-<h3>DevOps & Git</h3>
-
-<div class="skill-bar">
-<div class="skill-fill devops"><span class="skill-percent">70%</span></div>
-</div>
-
-<p>Git workflows and collaborative development.</p>
-
-</div>
-
-</div>
-
-</section>
-
 <section id="about" class="reveal">
 
 <h2>About</h2>
@@ -333,12 +274,13 @@ Key Salesforce engineering strengths demonstrated through enterprise project wor
 <div class="about-card">
 
 <p>
-Salesforce Developer designing scalable CRM automation and backend processing systems using Apex, asynchronous processing and modern Salesforce architecture.
+Salesforce Backend Developer with 2.5 years of experience designing scalable CRM automation systems, with strong exposure to enterprise banking workflows inspired by nCino.
 
-Specialized in Apex backend architecture, bulk-safe trigger frameworks and asynchronous processing using Queueable and Batch Apex.
+Specialized in building Apex-driven automation frameworks, async processing pipelines and metadata-driven systems that eliminate manual operations and improve workflow efficiency.
 
-Experienced in designing automation engines, system integrations and data processing pipelines that improve operational efficiency and reduce manual effort.
+Experienced in re-engineering complex business processes such as Smart Checklist, routing flows and service cascades into scalable Salesforce-native solutions using Trigger → Handler → Service architecture.
 
+Focused on system design, performance optimization and building production-grade backend solutions aligned with enterprise standards.
 </p>
 
 </div>
@@ -351,6 +293,7 @@ Experienced in designing automation engines, system integrations and data proces
 
 <div class="skills-grid">
 
+<div class="card" onclick="openSkill('ncino')">nCino Domain & Workflows</div>
 <div class="card" onclick="openSkill('apex')">Apex</div>
 <div class="card" onclick="openSkill('lwc')">Lightning Web Components</div>
 <div class="card" onclick="openSkill('triggers')">Trigger Framework</div>
@@ -378,40 +321,245 @@ Experienced in designing automation engines, system integrations and data proces
 
 <p class="duration">Associate Analyst | Aug 2022 – Jan 2025</p>
 
-<p>
-Worked on enterprise Salesforce implementations building automation
-using Apex triggers, flows and backend processing systems.
+<p class="project-desc">
+Worked on <b>enterprise banking workflows inspired by nCino</b>, building scalable 
+automation systems using Apex, async processing and metadata-driven design.
+</p>
+
+<ul class="project-highlights">
+<li>Designed Smart Checklist-like automation engine</li>
+<li>Built Opportunity → Service cascade provisioning system</li>
+<li>Implemented Batch Apex cleanup for performance optimization</li>
+</ul>
+
+<p class="project-impact">
+→ Reduced manual effort → Improved workflow efficiency
+</p>
+
+<span class="click-hint">
+Click to view full engineering details <span class="arrow">→</span>
+</span>
+
+</div>
+
+<div class="project-card" onclick="openCareerBreak()">
+
+<h3>Career Break — Skill Expansion Phase</h3>
+
+<p class="duration">Feb 2025 – Present</p>
+
+<p class="project-desc">
+Focused on <b>advancing Salesforce backend & system design skills</b>, 
+including LWC, integrations and building nCino-inspired automation systems.
+</p>
+
+<ul class="project-highlights">
+<li>Built independent automation projects with real-world scenarios</li>
+<li>Strengthened async processing & system design concepts</li>
+<li>Expanded into LWC and integration patterns</li>
+</ul>
+
+<p class="project-impact">
+→ Upskilled with production-level system thinking
+</p>
 
 <span class="click-hint">
 Click to view details <span class="arrow">→</span>
 </span>
+
+</div>
+</div>
+</section>
+
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<p class="section-sub">
+Click any project to explore architecture & system design
+</p>
+
+<div class="projects-grid">
+
+<!-- 1. CHECKLIST -->
+<div class="project-card" onclick="openProject('checklist')">
+
+<div class="project-header">
+
+<h3>Checklist Automation Engine</h3>
+
+</div>
+
+<div class="project-meta-top">
+
+<span class="project-tag">Automation</span>
+
+<a href="https://github.com/abilash-1521/salesforce-dynamic-checklist-engine"
+target="_blank"
+class="github-link"
+onclick="event.stopPropagation()">
+Code →
+</a>
+
+</div>
+<p class="project-problem">
+Manual checklist creation in opportunity lifecycle (similar to nCino Smart Checklist)
+</p>
+
+<p class="project-desc">
+Re-engineered a <b>Smart Checklist-like system</b> using Apex trigger framework and metadata-driven templates
+</p>
+
+<ul class="project-highlights">
+<li>Generates checklist dynamically based on selected products</li>
+<li>Creates dependent tasks using configurable templates</li>
+<li>Aligns with lifecycle stages similar to nCino workflow design</li>
+</ul>
+
+<p class="project-impact">
+→ Reduced manual effort → Standardized enterprise workflow execution
 </p>
 
 </div>
 
+<!-- 2. CASCADE -->
+<div class="project-card" onclick="openProject('cascade')">
 
-<div class="project-card" onclick="openCareerBreak()">
+<div class="project-accent"></div>
 
-<h3>Career Break</h3>
 
-<p class="duration">Feb 2025 – Present</p>
+<div class="project-header">
 
-<p>
+<h3>Treasury Cascade Automation</h3>
 
-Focused on upgrading Salesforce development skills including Lightning Web Components, integrations and advanced Apex automation while building independent projects to strengthen backend system design and scalable CRM architecture.
+</div>
 
-Available for immediate joining.
+<div class="project-meta-top">
 
-<span class="click-hint">
-Click to view details <span class="arrow">→</span>
-</span>
+<span class="project-tag">Workflow</span>
+
+<a href="https://github.com/abilash-1521/salesforce-opportunity-product-cascade-automation"
+target="_blank"
+class="github-link"
+onclick="event.stopPropagation()">
+Code →
+</a>
+
+</div>
+<p class="project-problem">
+Manual backend provisioning after deal closure (similar to nCino Treasury Service setup)
 </p>
+
+<p class="project-desc">
+Designed a <b>service cascade system</b> using Trigger + Queueable to automate backend provisioning
+</p>
+
+<ul class="project-highlights">
+<li>Creates Product Package & Service records dynamically</li>
+<li>Implements async processing for scalable execution</li>
+<li>Mirrors nCino-style service provisioning workflows</li>
+</ul>
+
+<p class="project-impact">
+→ Eliminated manual setup → Improved onboarding speed
+</p>
+</div>
+
+
+<!-- 3. SNAPSHOT -->
+<div class="project-card" onclick="openProject('snapshot')">
+
+<div class="project-accent"></div>
+
+<div class="project-header">
+
+<h3>Snapshot Cleanup Engine</h3>
+
+</div>
+
+<div class="project-meta-top">
+
+<span class="project-tag">Performance</span>
+
+<a href="https://github.com/abilash-1521/salesforce-snapshot-cleanup-system"
+target="_blank"
+class="github-link"
+onclick="event.stopPropagation()">
+Code →
+</a>
+</div>
+<p class="project-problem">
+High data volume impacting system performance in enterprise orgs
+</p>
+
+<p class="project-desc">
+Built a <b>batch-based cleanup framework</b> for automated data maintenance and performance optimization
+</p>
+
+<ul class="project-highlights">
+<li>Processes large datasets using Batch Apex</li>
+<li>Implements scheduled cleanup logic</li>
+<li>Ensures performance stability in high-volume systems</li>
+</ul>
+
+<p class="project-impact">
+→ Improved org performance → Reduced storage overhead
+</p>
+</div>
+
+
+<!-- 4. ACCOUNT SCHEMATIC -->
+<div class="project-card" onclick="openProject('account')">
+
+<div class="project-accent"></div>
+
+<div class="project-header">
+
+<h3>Account Schematic Engine</h3>
+
+</div>
+
+<div class="project-meta-top">
+
+<span class="project-tag">System Design</span>
+
+<a href="https://github.com/Abilash-1521/salesforce-account-schematic-engine"
+target="_blank"
+class="github-link"
+onclick="event.stopPropagation()">
+Code →
+</a>
+</div>
+
+
+<p class="project-problem">
+Complex multi-level relationships difficult to manage (similar to banking account-product mapping)
+</p>
+
+<p class="project-desc">
+Developed a <b>dynamic relationship & filtering engine</b> using Aura + Apex controllers
+</p>
+
+<ul class="project-highlights">
+<li>Handles account → deposit → treasury relationships</li>
+<li>Applies dynamic filters across related objects</li>
+<li>Maintains UI state consistency</li>
+</ul>
+
+<p class="project-impact">
+→ Improved data visibility → Reduced manual navigation effort
+</p>
+
 
 </div>
 
 </div>
 
 </section>
+<!-- ===============================
+impact
+=============================== -->
 <section id="impact" class="reveal">
 
 <h2>Engineering Impact</h2>
@@ -433,220 +581,83 @@ Click to view details <span class="arrow">→</span>
 </div>
 
 </section>
-<section id="projects" class="reveal">
+<!-- ===============================
+CASE STUDY (NEW)
+=============================== -->
+<!--
+<section id="case-study" class="reveal">
 
-<h2>Projects</h2>
+<h2>Case Studies</h2>
+<p class="section-sub">Deep dive into real engineering decisions & system design</p>
 
-<div class="project-grid">
+<div class="case-container">
 
-<!-- Checklist Engine -->
+<!-- CHECKLIST 
+<div id="case-checklist" class="case-card">
+<h3>Checklist Automation Engine</h3>
 
-<div class="project-card">
+<p><b>Problem</b></p>
+<p>Manual checklist creation during opportunity lifecycle caused delays and inconsistency.</p>
 
-<h3 onclick="openProject('checklist')">
-Dynamic Checklist & Task Automation Engine
-</h3>
-<p onclick="openProject('checklist')">
+<p><b>Solution</b></p>
+<p>Built a template-driven automation engine using Apex triggers and service layer.</p>
 
-<b>Problem:</b> Manual checklist creation during opportunity lifecycle<br><br>
+<p><b>Architecture</b></p>
+<ul>
+<li>Trigger → Handler → Service</li>
+<li>Template-based checklist generation</li>
+<li>Async processing for scalability</li>
+</ul>
 
-<b>Solution:</b> Template-driven Apex automation engine<br><br>
-
-<b>Impact:</b> Reduced manual effort & standardized workflows
-
-</p>
-<a
-href="https://github.com/Abilash-1521/salesforce-dynamic-checklist-engine"
-target="_blank"
-class="github-link"
-onclick="event.stopPropagation()">
-
-View Code on GitHub <span class="arrow">→</span>
-
-</a>
-
+<p><b>Impact</b></p>
+<p>Reduced manual effort by ~40% and standardized workflows across teams.</p>
 </div>
 
+<!-- CASCADE 
+<div id="case-cascade" class="case-card">
+<h3>Treasury Cascade Automation</h3>
 
-<!-- Opportunity Cascade -->
+<p><b>Problem</b></p>
+<p>Manual treasury setup after deal closure caused delays.</p>
 
-<div class="project-card">
+<p><b>Solution</b></p>
+<p>Automated record creation using trigger + Queueable Apex.</p>
 
-<h3 onclick="openProject('cascade')">
-Opportunity → Treasury Service Cascade
-</h3>
-
-<p onclick="openProject('cascade')">
-
-<b>Problem:</b> Manual treasury setup after deal closure<br><br>
-
-<b>Solution:</b> Apex automation triggered on stage change<br><br>
-
-<b>Impact:</b> Eliminated backend manual configuration
-
-</p>
-<a
-href="https://github.com/Abilash-1521/salesforce-opportunity-product-cascade-automation"
-target="_blank"
-class="github-link"
-onclick="event.stopPropagation()">
-
-View Code on GitHub <span class="arrow">→</span>
-
-</a>
-
+<p><b>Impact</b></p>
+<p>Eliminated manual backend setup and improved deal processing speed.</p>
 </div>
 
+<!-- SNAPSHOT 
+<div id="case-snapshot" class="case-card">
+<h3>Snapshot Cleanup Engine</h3>
 
-<!-- Snapshot Cleanup -->
+<p><b>Problem</b></p>
+<p>Large snapshot data degrading system performance.</p>
 
-<div class="project-card">
+<p><b>Solution</b></p>
+<p>Scheduled Batch Apex cleanup.</p>
 
-<h3 onclick="openProject('snapshot')">
-Snapshot Bulk Cleanup System
-</h3>
+<p><b>Impact</b></p>
+<p>Improved performance and reduced storage usage.</p>
+</div>
 
-<p onclick="openProject('snapshot')">
+<!-- ACCOUNT 
+<div id="case-account" class="case-card">
+<h3>Account Schematic Engine</h3>
 
-<b>Problem:</b> Large snapshot data degrading performance<br><br>
+<p><b>Problem</b></p>
+<p>Complex financial relationships difficult to filter and manage.</p>
 
-<b>Solution:</b> Scheduled Batch Apex cleanup pipeline<br><br>
+<p><b>Solution</b></p>
+<p>Dynamic multi-level filtering system with state handling.</p>
 
-<b>Impact:</b> Improved org performance & storage efficiency
-
-</p>
-
-<a
-href="https://github.com/Abilash-1521/salesforce-snapshot-cleanup-system"
-target="_blank"
-class="github-link"
-onclick="event.stopPropagation()">
-
-View Code on GitHub <span class="arrow">→</span>
-
-</a>
-
+<p><b>Impact</b></p>
+<p>Improved usability and reduced manual navigation.</p>
 </div>
 
 </div>
-
 </section>
-
-<section id="architecture" class="reveal">
-
-<h2>Salesforce Automation Architecture</h2>
-
-<p class="arch-desc">
-Click each layer to understand how I design scalable Salesforce automation systems.
-</p>
-
-<div class="architecture-diagram">
-
-<div class="arch-layer" onclick="showLayer('trigger')">
-<i class="fa-solid fa-bolt"></i>
-<h3>Trigger Layer</h3>
-<p>Entry point for data events</p>
-</div>
-
-<div class="arch-arrow">→</div>
-
-<div class="arch-layer" onclick="showLayer('handler')">
-<i class="fa-solid fa-code"></i>
-<h3>Handler Layer</h3>
-<p>Business logic separation</p>
-</div>
-
-<div class="arch-arrow">→</div>
-
-<div class="arch-layer" onclick="showLayer('service')">
-<i class="fa-solid fa-gears"></i>
-<h3>Service Layer</h3>
-<p>Reusable business logic</p>
-</div>
-
-<div class="arch-arrow">→</div>
-
-<div class="arch-layer" onclick="showLayer('database')">
-<i class="fa-solid fa-database"></i>
-<h3>Database Layer</h3>
-<p>Bulk safe DML operations</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="playground" class="reveal">
-
-<h2>Salesforce System Design Playground</h2>
-
-<div class="flow-container">
-
-<div class="flow-node" id="node1">Trigger Fired</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-node" id="node2">Handler Logic</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-node" id="node3">Service Layer</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-node" id="node4">Queueable Job</div>
-
-<div class="flow-line"></div>
-
-<div class="flow-node" id="node5">Database Update</div>
-
-</div>
-<button class="run-flow-btn" onclick="runSimulation()">
-Simulate System Flow
-</button>
-
-</section>
-
-<section id="simulator" class="reveal">
-
-<h2>Salesforce Transaction Simulator</h2>
-
-<p class="sim-desc">
-Simulates how a Salesforce transaction flows through backend architecture.
-</p>
-
-<div class="simulator-flow">
-
-<div class="sim-node" id="sim1">Opportunity Updated</div>
-
-<div class="flow-line"></div>
-
-<div class="sim-node" id="sim2">Trigger Fired</div>
-
-<div class="flow-line"></div>
-
-<div class="sim-node" id="sim3">Handler Logic</div>
-
-<div class="flow-line"></div>
-
-<div class="sim-node" id="sim4">Queueable Job</div>
-
-<div class="flow-line"></div>
-
-<div class="sim-node" id="sim5">External API Call</div>
-
-<div class="flow-line"></div>
-
-<div class="sim-node" id="sim6">Database Commit</div>
-
-</div>
-
-<button class="run-flow-btn" onclick="runTransaction()">
-Run Transaction
-</button>
-
-</section>
-
+-->
 <section id="timeline" class="reveal">
 
 <h2>Developer Journey</h2>
@@ -711,6 +722,65 @@ full-stack Salesforce development.
 </section>
 <section id="contact" class="reveal">
 
+<h2>Let’s Connect</h2>
+
+<p class="section-sub">
+Open to Salesforce Developer opportunities, collaborations, and technical discussions.
+</p>
+
+<div class="contact-grid">
+
+<!-- EMAIL -->
+<a href="mailto:abilash01.as@gmail.com?subject=Opportunity%20from%20Portfolio&body=Hi%20Abilash,%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20with%20your%20work.%20Would%20like%20to%20connect%20regarding..."
+class="contact-card">
+
+<i class="fa-solid fa-envelope"></i>
+
+<h3>Email</h3>
+<p>abilash01.as@gmail.com</p>
+
+</a>
+
+<!-- PHONE -->
+<a href="tel:+917449214157" class="contact-card">
+
+<i class="fa-solid fa-phone"></i>
+
+<h3>Mobile</h3>
+<p>+91 7449214157</p>
+
+</a>
+
+<!-- LINKEDIN -->
+<a class="contact-card"
+href="https://www.linkedin.com/in/abilash-s-a48725368"
+target="_blank">
+
+<i class="fa-brands fa-linkedin"></i>
+
+<h3>LinkedIn</h3>
+<p>View Profile</p>
+
+</a>
+
+<!-- GITHUB -->
+<a class="contact-card"
+href="https://github.com/abilash-1521"
+target="_blank">
+
+<i class="fa-brands fa-github"></i>
+
+<h3>GitHub</h3>
+<p>View Repositories</p>
+
+</a>
+
+</div>
+
+</section>
+<!--
+<section id="contact" class="reveal">
+
 <h2>Contact</h2>
 
 <div class="contact-grid">
@@ -724,6 +794,19 @@ class="contact-card">
 <p>abilash01.as@gmail.com</p>
 
 </a>
+<section id="contact">
+
+<h2>Let’s Connect</h2>
+
+<p>
+Open to Salesforce Developer opportunities & discussions
+</p>
+
+<a href="mailto:yourmail@gmail.com" class="btn">
+Contact Me
+</a>
+
+</section>
 
 
 <a href="tel:+917449214157"
@@ -762,7 +845,7 @@ target="_blank">
 
 </div>
 
-</section>
+</section>-->
 <footer>
 
 <p>© 2026 Abilash S — Salesforce Developer </p>
@@ -771,11 +854,11 @@ target="_blank">
 
 </footer>
 
-<div id="skillPopup" class="popup">
+<!--<div id="skillPopup" class="popup">
 
 <div class="popup-content">
 
-<span class="close-btn" onclick="closePopup()">✕</span>
+<span class="close-btn" onclick="closePopup()">×</span>
 
 <h3 id="popupTitle"></h3>
 
@@ -785,14 +868,39 @@ target="_blank">
 
 </div>
 
-</div>
 
+</div>-->
+<div id="skillPopup" class="popup">
+
+  <div class="popup-content skill-layout">
+
+    <!-- CLOSE BUTTON -->
+    <button class="close-btn" onclick="closeAllPopups()">×</button>
+
+    <!-- LEFT SIDE (TEXT) -->
+    <div class="skill-text">
+      <h2 id="popupTitle"></h2>
+      <p id="popupText"></p>
+    </div>
+
+    <!-- RIGHT SIDE (CODE) -->
+    <div class="skill-code-wrapper">
+      <div class="code-header">Code Example</div>
+
+      <pre class="skill-code">
+<code id="popupCode"></code>
+      </pre>
+    </div>
+
+  </div>
+
+</div>
 
 <div id="detailPopup" class="popup">
 
 <div class="popup-content">
 
-<span class="close-btn" onclick="closeDetail()">✕</span>
+<span class="close-btn" onclick="closeDetail()">×</span>
 
 <h3 id="detailTitle"></h3>
 
@@ -801,13 +909,48 @@ target="_blank">
 </div>
 
 </div>
+<!-- ===============================
+PROJECT POPUP (DETAIL POPUP)
+=============================== -->
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<!-- HEADER -->
+<div class="popup-header">
+<h2 id="popup-title"></h2>
+<span class="close-btn" onclick="closePopup()">×</span>
+
+</div>
+
+<!-- TABS -->
+<div class="popup-tabs">
+<button class="tab active" onclick="switchTab('overview')">Overview</button>
+<button class="tab" onclick="switchTab('architecture')">Architecture</button>
+<button class="tab" onclick="switchTab('decisions')">Decisions</button>
+</div>
+
+<!-- CONTENT -->
+<div class="popup-body">
+
+<div id="tab-overview" class="tab-content active"></div>
+
+<div id="tab-architecture" class="tab-content"></div>
+
+<div id="tab-decisions" class="tab-content"></div>
+
+</div>
+
+</div>
+</div>
 
 
 <div id="recruiterPopup" class="popup">
 
 <div class="popup-content">
 
-<span class="close-btn" onclick="closeRecruiter()">✕</span>
+<span class="close-btn" onclick="closeRecruiter()">×</span>
 
 <h3>Salesforce Architecture Thinking</h3>
 
@@ -823,10 +966,154 @@ target="_blank">
 </div>
 
 </div>
+<div id="engineeringPopup" class="popup">
+
+  <div class="popup-content">
+
+    <button class="close-btn" onclick="closeAllPopups()">×</button>
+
+    <h2>System Design & Engineering Approach</h2>
+
+    <p class="section-sub">
+      How I design scalable Salesforce automation systems
+    </p>
+
+    <!-- MOVE YOUR EXISTING CONTENT HERE -->
+    
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="reveal">
+
+<h2>Salesforce Automation Architecture</h2>
+
+<p class="arch-desc">
+Click each layer to understand how I design scalable Salesforce automation systems.
+</p>
+
+<div class="architecture-diagram">
+
+<div class="arch-layer" onclick="showLayer('trigger')">
+<i class="fa-solid fa-bolt"></i>
+<h3>Trigger Layer</h3>
+<p>Entry point for data events</p>
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-layer" onclick="showLayer('handler')">
+<i class="fa-solid fa-code"></i>
+<h3>Handler Layer</h3>
+<p>Business logic separation</p>
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-layer" onclick="showLayer('service')">
+<i class="fa-solid fa-gears"></i>
+<h3>Service Layer</h3>
+<p>Reusable business logic</p>
+</div>
+
+<div class="arch-arrow">→</div>
+
+<div class="arch-layer" onclick="showLayer('database')">
+<i class="fa-solid fa-database"></i>
+<h3>Database Layer</h3>
+<p>Bulk safe DML operations</p>
+</div>
+
+</div>
+
+</section>
+
+    <!-- PLAYGROUND -->
+  <section id="playground" class="reveal">
+
+<h2>Salesforce System Design Playground</h2>
+
+<div class="flow-container">
+
+<div class="flow-node" id="node1">Trigger Fired</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node2">Handler Logic</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node3">Service Layer</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node4">Queueable Job</div>
+
+<div class="flow-line"></div>
+
+<div class="flow-node" id="node5">Database Update</div>
+
+</div>
+<button class="run-flow-btn" onclick="runSimulation()">
+Simulate System Flow
+</button>
+
+</section>
+
+    <!-- SIMULATOR -->
+   <section id="simulator" class="reveal">
+
+<h2>Salesforce Transaction Simulator</h2>
+
+<p class="sim-desc">
+Simulates how a Salesforce transaction flows through backend architecture.
+</p>
+
+<div class="simulator-flow">
+
+<div class="sim-node" id="sim1">Opportunity Updated</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim2">Trigger Fired</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim3">Handler Logic</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim4">Queueable Job</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim5">External API Call</div>
+
+<div class="flow-line"></div>
+
+<div class="sim-node" id="sim6">Database Commit</div>
+
+</div>
+
+<button class="run-flow-btn" onclick="runTransaction()">
+Run Transaction
+</button>
+
+</section>
+
+  </div>
+
+</div>
 
 
 <script src="script.js"></script>
 
+<!-- ===============================
+STICKY CTA (NEW)
+=============================== -->
 
+<div class="sticky-cta">
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
 </body>
-</html>
+</html>-->
+
