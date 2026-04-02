@@ -16,8 +16,8 @@
 
 <link rel="canonical" href="https://abilash-1521.github.io/portfolio/">
 
-<link rel="icon" href="favicon.ico">
-
+<!--<link rel="icon" href="favicon.ico">
+-->
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
 <link rel="stylesheet" href="style.css">
@@ -79,6 +79,14 @@ t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];
 y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "vv0n8znypn");
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("7AFlTCaTg-79Reqpe"); // replace this
+})();
 </script>
 
 </head>
@@ -165,12 +173,9 @@ Apex • Async Processing • Enterprise Banking Workflows • nCino-inspired Sy
 
 <div class="hero-buttons">
 
-<a href="Abilash Resume.pdf"
-class="btn"
-onclick="trackResumeDownload()">
+<a href="#" class="btn" onclick="handleResumeClick(event)">
 Download Resume
 </a>
-
 <button class="recruiter-btn" onclick="openEngineeringPopup()">
 Explore System Design →
 </button>
@@ -1114,6 +1119,32 @@ STICKY CTA (NEW)
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </div>
+
+<div id="thankPopup" class="thank-popup hidden">
+
+  <p class="thank-title">Thanks for checking my resume 🙌</p>
+<p class="thank-sub">
+  Feel free to connect — I'd love to discuss opportunities!
+</p>
+
+  <div class="thank-actions">
+    <a href="mailto:abilash01.as@gmail.com
+?subject=Regarding%20your%20profile%20-%20Abilash%20S
+&body=Hi%20Abilash,%0A%0AI%20came%20across%20your%20profile%20and%20resume.%20I%20would%20like%20to%20connect%20with%20you%20to%20discuss%20potential%20opportunities.%0A%0APlease%20let%20me%20know%20a%20convenient%20time.%0A%0ARegards,"
+class="thank-btn primary">
+Let's Connect
+</a>
+    <button onclick="closeThankPopup()" class="thank-btn secondary">
+      Close
+    </button>
+  </div>
+
+</div>
+
+<div id="toast" class="toast hidden">
+  ✅ Resume downloaded successfully!
+</div>
+
 </body>
-</html>-->
+</html>
 

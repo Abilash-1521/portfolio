@@ -2262,7 +2262,6 @@ event_label:'resume'
 
 console.log("Resume downloaded");
 
-incrementResumeCounter();
 
 }
 
@@ -2358,3 +2357,89 @@ document.querySelectorAll("nav a").forEach(link => {
     document.body.style.overflow = "hidden";
   }
  
+  function handleResumeClick(e){
+
+    e.preventDefault();
+
+    // 1. FORCE download (no navigation)
+  const link = document.createElement("a");
+  link.href = "./Abilash_Resume.pdf"; // 👈 relative path
+  link.download = "Abilash_Resume.pdf";
+  link.setAttribute("download", "");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+    // 1. Analytics (optional)
+    trackResumeDownload();
+
+    // 2. Email notification
+    if(typeof emailjs !== "undefined"){
+      emailjs.send("service_uxcii83","template_bqrvjza",{
+        message: "Resume downloaded 🚀",
+        time: new Date().toLocaleString(),
+        page: window.location.href
+      });
+    }
+  
+    // 3. Show thanks popup
+    showToast();
+  
+    // 4. Download resume (slight delay)
+   /* setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = "./Abilash Resume.pdf";
+      link.download = "Abilash Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, 800);*/
+
+  // 5. Show popup AFTER slight delay
+  setTimeout(() => {
+    showThankYouPopup();
+  }, 1000); // 1 sec delay
+
+  }
+
+  function showThankYouPopup(){
+    const popup = document.getElementById("thankPopup");
+  
+    if(popup){
+      popup.classList.remove("hidden");
+  
+      setTimeout(() => {
+        popup.classList.add("hidden");
+      }, 5000);
+    }
+  }
+  
+  function closeThankPopup(){
+    document.getElementById("thankPopup").classList.add("hidden");
+  }
+ /* function triggerDownload(){
+    const link = document.createElement("a");
+    link.href = "./Abilash Resume.pdf";
+    link.download = "Abilash Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }*/
+
+    function showToast(){
+      const toast = document.getElementById("toast");
+    
+      toast.classList.remove("hidden");
+    
+      setTimeout(() => {
+        toast.classList.add("show");
+      }, 50);
+    
+      setTimeout(() => {
+        toast.classList.remove("show");
+    
+        setTimeout(() => {
+          toast.classList.add("hidden");
+        }, 400);
+      }, 3000);
+    }
